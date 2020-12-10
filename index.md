@@ -15,6 +15,8 @@ Not to brag, but it's pretty great.
 
 <hello-world></hello-world>
 
+## Mixing html and markdown seems to work
+
 <h3>Color Manipulation (Lightness)</h3>
 
 <div class="flex">
