@@ -3,6 +3,6 @@ customElements.define('hello-world', class extends HTMLElement {
     super();
   }
   connectedCallback() {
-    alert('connected');
+    console.log('connected');
   }
 });
