@@ -6,4 +6,39 @@
 
   --heading-color: #000;
   --body-color: #3d3d3d;
+
+  --link-color-h: 211;
+  --link-color-s: 100%;
+  --link-color-l: 50%;
+  --link-color-hsl: var(--link-color-h), var(--link-color-s), var(--link-color-l);
+
+  --link-color: hsl(var(--link-color-hsl));
+  --link-color-10: hsla(var(--link-color-hsl), .1);
+  --link-color-20: hsla(var(--link-color-hsl), .2);
+  --link-color-30: hsla(var(--link-color-hsl), .3);
+  --link-color-40: hsla(var(--link-color-hsl), .4);
+  --link-color-50: hsla(var(--link-color-hsl), .5);
+  --link-color-60: hsla(var(--link-color-hsl), .6);
+  --link-color-70: hsla(var(--link-color-hsl), .7);
+  --link-color-80: hsla(var(--link-color-hsl), .8);
+  --link-color-90: hsla(var(--link-color-hsl), .9);
+
+  --link-color-warm: hsl(calc(var(--link-color-h) + 80), var(--link-color-s), var(--link-color-l));
+  --link-color-cold: hsl(calc(var(--link-color-h) - 80), var(--link-color-s), var(--link-color-l));
+
+  --link-color-low: hsl(var(--link-color-h), calc(var(--link-color-s) / 2), var(--link-color-l));
+  --link-color-lowest: hsl(var(--link-color-h), calc(var(--link-color-s) / 4), var(--link-color-l));
+
+  --link-color-light: hsl(var(--link-color-h), var(--link-color-s), calc(var(--link-color-l) / .9));
+  --link-color-dark: hsl(var(--link-color-h), var(--link-color-s), calc(var(--link-color-l) * .9));
+  --link-color-darker: hsl(var(--link-color-h), var(--link-color-s), calc(var(--link-color-l) / .64));
+}
+
+.flex {
+  display: flex;
+}
+
+.flex > div {
+  flex: 1;
+  height: calc(100vw / 10);
 }

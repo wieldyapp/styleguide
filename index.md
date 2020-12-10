@@ -14,3 +14,12 @@ Not to brag, but it's pretty great.
 {% endfor %}
 
 <hello-world></hello-world>
+
+<h3>Color Manipulation (Lightness)</h3>
+
+<div class="flex">
+  <div style="background-color: var(--link-color-light)"></div>
+  <div style="background-color: var(--link-color)"></div>
+  <div style="background-color: var(--link-color-dark)"></div>
+  <div style="background-color: var(--link-color-darker)"></div>
+</div>
