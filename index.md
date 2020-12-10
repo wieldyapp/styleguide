@@ -12,3 +12,5 @@ Not to brag, but it's pretty great.
     <time>{{ post.data.date | date: "%B %d, %Y" }}</time>
   </a>
 {% endfor %}
+
+<hello-world></hello-world>
