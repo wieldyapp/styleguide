@@ -9,8 +9,66 @@
   </head>
 
   <body>
-    {% include nav.liquid %}
-    {{ content }}
+    <main>
+      <div>
+        <table>
+          <thead>
+            <tr>
+              <th>Status</th>
+              <th>Mission name</th>
+              <th>Activated</th>
+              <th>People involved</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <checkbox-switch checked class="checkbox"></checkbox-switch>
+              </td>
+              <td>
+                <strong>From Russia with Love (1963)</strong>
+              </td>
+              <td>
+                3 Days Ago
+              </td>
+              <td>
+                <strong>548</strong>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <checkbox-switch disabled checked></checkbox-switch>
+              </td>
+              <td>
+                <strong>Goldfinger (1964)</strong>
+              </td>
+              <td>
+                4 Days Ago
+              </td>
+              <td>
+                <strong>881</strong>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <checkbox-switch></checkbox-switch>
+              </td>
+              <td>
+                <strong>Thunderball (1965)</strong>
+              </td>
+              <td>
+                4 Days Ago
+              </td>
+              <td>
+                <strong>3,698</strong>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
   </body>
+
   <script async type=module src=/scripts.js></script>
+  <script async type=module src=//static.brickpile.app/main.js?v=3></script>
 </html>

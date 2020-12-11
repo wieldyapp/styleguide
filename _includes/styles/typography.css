@@ -19,3 +19,7 @@ h6 { font-size: 0.8rem; }
 p, li {
   margin: 1rem 0;
 }
+
+a:any-link {
+  text-decoration: none;
+}

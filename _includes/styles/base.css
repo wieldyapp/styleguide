@@ -1,0 +1,192 @@
+@import url('https://rsms.me/inter/inter.css');
+html { font-family: 'Inter', sans-serif; }
+@supports (font-variation-settings: normal) {
+  html { font-family: 'Inter var', sans-serif; }
+}
+
+:root {
+  --main-bg-color: #1B2431;
+  --complementary-bg-color: #273142;
+  --main-border-color: #313D4F;
+  --main-font-color: #7F8FA4;
+  --complementary-font-color: #fff;
+  --main-font-size: 10px;
+  --main-font-weight: 400;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --main-bg-color: #fff;
+  }
+}
+
+html {
+  font-size: var(--main-font-size);
+  line-height: var(--line-height);
+}
+
+body {
+  --duration: 0.3s;
+  --timing: ease;
+
+ color: var(--main-font-color);
+ background-color: var(--main-bg-color);
+ font-size: 1.4rem;
+ font-weight: var(--main-font-weight);
+
+ transition:
+   color var(--duration) var(--timing),
+   background-color var(--duration) var(--timing);
+
+   min-height: 100%;
+
+   display: grid;
+   place-items: center;
+}
+
+div {
+  background-color: var(--complementary-bg-color);
+  border: solid 1px var(--main-border-color);
+  border-radius: 4px;
+  min-width: 20%;
+  box-sizing: border-box;
+}
+
+scheme-switch,
+toggle-switch,
+checkbox-switch {
+  vertical-align: middle;
+  outline: none;
+}
+
+toggle-switch:focus {
+  outline: none;
+}
+
+toggle-switch:checked {
+  border: solid 3px red;
+}
+
+
+table {
+  width: 100%;
+}
+
+table,
+tr,
+td {
+  border-collapse: collapse;
+}
+
+thead,
+tr:not(:last-child) {
+  border-bottom: solid 1px var(--main-border-color);
+}
+
+th {
+  font-weight: 600;
+  color: var(--main-font-color);
+}
+
+th,
+td {
+  padding: 1.5rem 2rem;
+  text-align: left;
+}
+
+strong {
+  color: var(--complementary-font-color);
+  font-weight: 600;
+}
+
+label > checkbox-switch {
+  margin-right: .5rem;
+}
+
+h2 {
+  font-size: 1.2rem;
+  text-indent: 2rem;
+  text-transform: uppercase;
+}
+
+img-thumbnail {
+  transition: opacity 150ms ease-out;
+}
+img-thumbnail:not([loaded]) {
+  opacity: 0;
+}
+
+.checkboxes {
+   background: none;
+   border:none;
+}
+
+.checkboxes > div {
+  border: 0;
+  padding: .5rem 2rem;
+  background: none;
+}
+
+/* Context menu */
+context-menu ul {
+  margin: 0;
+  list-style: none;
+  padding: 0;
+  border-radius: 4px;
+}
+
+context-menu li:first-child {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-top: solid 1px #313D4F;
+}
+
+context-menu li:first-child {
+    bottom: 5px;
+    left: 6px;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-color: rgba(136, 183, 213, 0);
+    border-bottom-color: rgb(39, 40, 43);
+    border-width: 6px;
+
+}
+
+context-menu li:last-child {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom: solid 1px #313D4F;
+}
+
+context-menu li {
+  background: #273142;
+  border-right: solid 1px #313D4F;
+  border-left: solid 1px #313D4F;
+  border-bottom: solid 1px #313D4F;
+}
+
+context-menu a {
+  align-items: center;
+  padding: 9px 14px;
+  color: #fff;
+  display:block;
+}
+
+context-menu a:any-link {
+  text-decoration:none;
+}
+
+context-menu li:hover {
+  background-color: #313D4F;
+}
+context-menu li:hover a {
+  color: #2EA2F8;
+}
+
+context-menu:hover path {
+  stroke: #fff;
+}
