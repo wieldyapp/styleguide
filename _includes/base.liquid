@@ -1,134 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <title>Your page title</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="/styles.css" rel="stylesheet">
-  </head>
+<head>
+  <title>Your page title</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="/styles.css" rel="stylesheet">
+</head>
 
-  <body>
-    <main>
-      <div>
-        <table>
-          <thead>
-            <tr>
-              <th>Status</th>
-              <th>Mission name</th>
-              <th>Activated</th>
-              <th>People involved</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                <checkbox-switch checked class="checkbox"></checkbox-switch>
-              </td>
-              <td>
-                <strong>From Russia with Love (1963)</strong>
-              </td>
-              <td>
-                3 Days Ago
-              </td>
-              <td>
-                <strong>548</strong>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <checkbox-switch disabled checked></checkbox-switch>
-              </td>
-              <td>
-                <strong>Goldfinger (1964)</strong>
-              </td>
-              <td>
-                4 Days Ago
-              </td>
-              <td>
-                <strong>881</strong>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <checkbox-switch></checkbox-switch>
-              </td>
-              <td>
-                <strong>Thunderball (1965)</strong>
-              </td>
-              <td>
-                4 Days Ago
-              </td>
-              <td>
-                <strong>3,698</strong>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        <pre>
-          <code>&lt;checkbox-switch&gt;&lt;/checkbox-switch&gt;</code>
-        </pre>
-      </div>
-      <div>
-        <table>
+<body>
+  <nav>
+    <scheme-switch checked></scheme-switch>
+    <a href="#">Introduction</a>
+    <details>
+      <summary>THE ELEMENTS</summary>
+      <p>stuff</p>
+    </details>
+    <div id="dragbar"></div>
+  </nav>
+  <main>
+    <div>
+      <table>
         <thead>
-        <tr>
-        <th>Status</th>
-        <th>Mission name</th>
-        <th>Activated</th>
-        <th>People involved</th>
-        </tr>
+          <tr>
+            <th>Status</th>
+            <th>Mission name</th>
+            <th>Activated</th>
+            <th>People involved</th>
+          </tr>
         </thead>
         <tbody>
-        <tr>
-        <td>
-        <toggle-switch checked="" class="checkbox" aria-checked="true" role="checkbox" tabindex="0"></toggle-switch>
-        </td>
-        <td>
-        <strong>From Russia with Love (1963)</strong>
-        </td>
-        <td>
-        3 Days Ago
-        </td>
-        <td>
-        <strong>548</strong>
-        </td>
-        </tr>
-        <tr>
-        <td>
-        <toggle-switch disabled="" role="checkbox" tabindex="0"></toggle-switch>
-        </td>
-        <td>
-        <strong>Goldfinger (1964)</strong>
-        </td>
-        <td>
-        4 Days Ago
-        </td>
-        <td>
-        <strong>881</strong>
-        </td>
-        </tr>
-        <tr>
-        <td>
-        <toggle-switch role="checkbox" tabindex="0"></toggle-switch>
-        </td>
-        <td>
-        <strong>Thunderball (1965)</strong>
-        </td>
-        <td>
-        4 Days Ago
-        </td>
-        <td>
-        <strong>3,698</strong>
-        </td>
-        </tr>
+          <tr>
+            <td>
+              <checkbox-switch checked class="checkbox"></checkbox-switch>
+            </td>
+            <td>
+              <strong>From Russia with Love (1963)</strong>
+            </td>
+            <td>
+              3 Days Ago
+            </td>
+            <td>
+              <strong>548</strong>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <checkbox-switch disabled checked></checkbox-switch>
+            </td>
+            <td>
+              <strong>Goldfinger (1964)</strong>
+            </td>
+            <td>
+              4 Days Ago
+            </td>
+            <td>
+              <strong>881</strong>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <checkbox-switch></checkbox-switch>
+            </td>
+            <td>
+              <strong>Thunderball (1965)</strong>
+            </td>
+            <td>
+              4 Days Ago
+            </td>
+            <td>
+              <strong>3,698</strong>
+            </td>
+          </tr>
         </tbody>
-        </table>
-        </div>
-    </main>
-  </body>
+      </table>
+      <pre>
+          <code><span>&lt;</span>checkbox-switch <span>selected</span><span>&gt;&lt;</span>/checkbox-switch<span>&gt;</span></code>
+        </pre>
+    </div>
+    <div>
+      <table>
+        <thead>
+          <tr>
+            <th>Status</th>
+            <th>Mission name</th>
+            <th>Activated</th>
+            <th>People involved</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <toggle-switch checked="" class="checkbox" aria-checked="true" role="checkbox" tabindex="0">
+              </toggle-switch>
+            </td>
+            <td>
+              <strong>From Russia with Love (1963)</strong>
+            </td>
+            <td>
+              3 Days Ago
+            </td>
+            <td>
+              <strong>548</strong>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <toggle-switch disabled="" role="checkbox" tabindex="0"></toggle-switch>
+            </td>
+            <td>
+              <strong>Goldfinger (1964)</strong>
+            </td>
+            <td>
+              4 Days Ago
+            </td>
+            <td>
+              <strong>881</strong>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <toggle-switch role="checkbox" tabindex="0"></toggle-switch>
+            </td>
+            <td>
+              <strong>Thunderball (1965)</strong>
+            </td>
+            <td>
+              4 Days Ago
+            </td>
+            <td>
+              <strong>3,698</strong>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
-  <script async type=module src=/scripts.js></script>
-  <script async type=module src=//static.brickpile.app/main.js?v=3></script>
+  </main>
+
+</body>
+
+<script async type=module src=/scripts.js></script>
+<script async type=module src=//static.brickpile.app/main.js?v=3></script>
 
 </html>

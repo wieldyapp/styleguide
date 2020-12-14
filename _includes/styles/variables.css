@@ -43,6 +43,58 @@
 
   --control-color-light: hsl(var(--control-color-h), var(--control-color-s), calc(var(--control-color-l) / .9));
   --control-color-dark: hsl(var(--control-color-h), var(--control-color-s), calc(var(--control-color-l) * .9));
+
+  --primary50: #f4fbf8; /* hsla(175, 67%, 13%, 1) */
+  --primary100: #e9f6f1;
+  --primary200: #c7e9dc; /* hsla(165, 70%, 17%, 1) */
+  --primary300: #a5dbc7;
+  --primary400: #62c19c;
+  --primary500: #1ea672;
+  --primary600: #1b9567;
+  --primary700: #177d56;
+  --primary800: #126444;
+  --primary900: #0f5138;
+
+  --gray50: #f7fafc;
+  --gray100: #e3e8ee;
+  --gray200: #c1c9d2;
+  --gray300: #a3acb9;
+  --gray400: #8792a2;
+  --gray500: #697386;
+  --gray600: #4f566b;
+  --gray700: #3c4257;
+  --gray800: #2a2f45;
+  --gray900: #1a1f36;
+
+  --blue50: #f5fbff;
+  --blue100: #d6ecff;
+  --blue200: #a4cdfe;
+  --blue300: #7dabf8;
+  --blue400: #6c8eef;
+  --blue500: #556cd6;
+  --blue600: #3d4eac;
+  --blue700: #2f3d89;
+  --blue800: #212d63;
+  --blue900: #131f41;
+
+  --green50: #efffed;
+  --green100: #cbf4c9;
+  --green200: #85d996;
+  --green300: #33c27f;
+  --green400: #1ea672;
+  --green500: #09825d;
+  --green600: #0e6245;
+  --green700: #0d4b3b;
+  --green800: #0b3733;
+  --green900: #082429;
+
+  --syntax-light-default: var(--gray500);
+  --syntax-punctuation: var(--gray400);
+  --syntax-light-comment: var(--gray300);
+  --syntax-light-meta: var(--gray500);
+  --syntax-light-operator: var(--blue500);
+  --syntax-light-string: var(--green500);
+
 }
 
 .flex {

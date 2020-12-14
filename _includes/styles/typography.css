@@ -22,4 +22,6 @@ p, li {
 
 a:any-link {
   text-decoration: none;
+  color: var(--gray400);
+  font-weight: 500;
 }
