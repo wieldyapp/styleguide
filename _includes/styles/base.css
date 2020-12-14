@@ -248,12 +248,12 @@ toggle-switch {
 }
 
 toggle-switch[checked] {
-  background-color: var(--primary600);
-  box-shadow: 0 0 0 1px var(--primary600);
+  background-color: var(--primary800);
+  box-shadow: 0 0 0 1px var(--primary800);
 }
 
 toggle-switch::after {
-  background-color:var(--primary100);
+  background-color:var(--primary50);
   box-shadow: 0 0 0 1px rgba(0,0,0,.07), 0 1px 3px 0 rgba(59,65,94,.1);
 }
 

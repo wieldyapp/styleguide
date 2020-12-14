@@ -1,22 +1,25 @@
-customElements.define('hello-world', class extends HTMLElement {
-  constructor() {
-    super();
+customElements.define(
+  "hello-world",
+  class extends HTMLElement {
+    constructor() {
+      super();
+    }
+    connectedCallback() {
+      this.innerHTML = `<button></button>`;
+      foo();
+    }
   }
-  connectedCallback() {
-    this.innerHTML = `<button></button>`;
-    foo();
-  }
-});
+);
 
 // template markup
-  // ===============================================================================================
+// ===============================================================================================
 
-  const html = `
+const html = `
   <input type="checkbox" />
 `;
 
 // stylesheet
-  // ===============================================================================================
+// ===============================================================================================
 
 const css = `
   :host {
@@ -79,138 +82,155 @@ const css = `
 `;
 
 // utils
-  // ===============================================================================================
+// ===============================================================================================
 
-const fireEvent = host =>
-  host.dispatchEvent(new Event("change", {
-    bubbles: true,
-    composed: true
-  }));
+const fireEvent = (host) =>
+  host.dispatchEvent(
+    new Event("change", {
+      bubbles: true,
+      composed: true,
+    })
+  );
 
-customElements.define('scheme-switch', class extends HTMLElement {
+customElements.define(
+  "scheme-switch",
+  class extends HTMLElement {
+    // Identify the element as a form-associated custom element
+    static get formAssociated() {
+      return true;
+    }
 
-  // Identify the element as a form-associated custom element
-  static formAssociated = true;
+    static get observedAttributes() {
+      return ["disabled", "checked"];
+    }
+    constructor() {
+      super();
+      // Get access to the internal form control APIs
+      this._internals = this.attachInternals();
 
-  static observedAttributes = ['disabled', 'checked'];
+      this.attachShadow({ mode: "open", delegatesFocus: true });
+      this.shadowRoot.innerHTML = `<style>${css}</style>${html}`;
 
-  constructor() {
-    super();
-    // Get access to the internal form control APIs
-    this._internals = this.attachInternals();
+      this.input_ = this.shadowRoot.querySelector("input");
 
-    this.attachShadow({mode: 'open', delegatesFocus: true});
-    this.shadowRoot.innerHTML = `<style>${css}</style>${html}`;
-
-    this.input_ = this.shadowRoot.querySelector('input');
-
-    // Do something if <label> is clicked.
-    this.addEventListener('click', () => {
-      let checked = this.toggleAttribute('checked');
-      this.checked = checked;
-      fireEvent(this);
-    });
-
-    this.addEventListener('keypress', ({metaKey, keyCode}) => {
-      if(keyCode === 32) {
-        let checked = this.toggleAttribute('checked');
+      // Do something if <label> is clicked.
+      this.addEventListener("click", () => {
+        let checked = this.toggleAttribute("checked");
         this.checked = checked;
         fireEvent(this);
+      });
+
+      this.addEventListener("keypress", ({ metaKey, keyCode }) => {
+        if (keyCode === 32) {
+          let checked = this.toggleAttribute("checked");
+          this.checked = checked;
+          fireEvent(this);
+        }
+      });
+    }
+
+    // New lifecycle callbacks for form-associated
+    //  custom elements.
+
+    // New lifecycle callback. This is called when association with
+    // <form> is changed.
+    formAssociatedCallback(nullableForm) {
+      console.log("Form associated.");
+    }
+
+    // New lifecycle callback. This is called when ‘disabled’ attribute of
+    // this element or an ancestor <fieldset> is updated.
+    formDisabledCallback(disabled) {
+      // Do something.  e.g. adding/removing ‘disabled’ content attributes
+      // to/from form controls in this shadow tree.
+      if (disabled) {
+        this.input_.disabled = disabled;
       }
-    })
-
-  }
-
-  // New lifecycle callbacks for form-associated
-  //  custom elements.
-
-  // New lifecycle callback. This is called when association with
-  // <form> is changed.
-  formAssociatedCallback(nullableForm) {
-    console.log('Form associated.');
-  }
-
-  // New lifecycle callback. This is called when ‘disabled’ attribute of
-  // this element or an ancestor <fieldset> is updated.
-  formDisabledCallback(disabled) {
-    // Do something.  e.g. adding/removing ‘disabled’ content attributes
-    // to/from form controls in this shadow tree.
-    if (disabled) {
-      this.input_.disabled = disabled;
     }
-  }
 
-  // New lifecycle callback. This is called when the owner form is reset.
-  formResetCallback() {
-    console.log('Form reset.');
-  }
+    // New lifecycle callback. This is called when the owner form is reset.
+    formResetCallback() {
+      console.log("Form reset.");
+    }
 
-  // New lifecycle callback. This is called when the browser wants to
-  // restore user-visible state.
-  formStateRestoreCallback(state, mode) {
-    console.log('Form state restore.');
-  }
+    // New lifecycle callback. This is called when the browser wants to
+    // restore user-visible state.
+    formStateRestoreCallback(state, mode) {
+      console.log("Form state restore.");
+    }
 
-  // The following properties and methods aren't strictly required,
-  // but native form controls provide them. Providing them helps
-  // ensure consistency with native controls.
-  get form() { return this._internals.form; }
-  get name() { return this.getAttribute('name'); }
-  get type() { return this.localName; }
-  get validity() {return this.internals_.validity; }
-  get validationMessage() {return this.internals_.validationMessage; }
-  get willValidate() {return this.internals_.willValidate; }
+    // The following properties and methods aren't strictly required,
+    // but native form controls provide them. Providing them helps
+    // ensure consistency with native controls.
+    get form() {
+      return this._internals.form;
+    }
+    get name() {
+      return this.getAttribute("name");
+    }
+    get type() {
+      return this.localName;
+    }
+    get validity() {
+      return this.internals_.validity;
+    }
+    get validationMessage() {
+      return this.internals_.validationMessage;
+    }
+    get willValidate() {
+      return this.internals_.willValidate;
+    }
 
-  checkValidity() { return this.internals_.checkValidity(); }
-  reportValidity() { return this.internals_.reportValidity(); }
+    checkValidity() {
+      return this.internals_.checkValidity();
+    }
+    reportValidity() {
+      return this.internals_.reportValidity();
+    }
 
-  // Standard custom element callback
-  // Here, we forward values like placeholder and disabled
-  // to the internal input
-  attributeChangedCallback(name, oldValue, newValue) {
-    switch(name) {
-      case 'checked':
+    // Standard custom element callback
+    // Here, we forward values like placeholder and disabled
+    // to the internal input
+    attributeChangedCallback(name, oldValue, newValue) {
+      switch (name) {
+        case "checked":
           this.input_.checked = !this.input_.checked;
-          this.setAttribute('aria-checked', this.input_.checked);
-        break;
-      // case 'disabled':
-      //     this.input_[name] = newValue;
-      //   break;
+          this.setAttribute("aria-checked", this.input_.checked);
+          break;
+        // case 'disabled':
+        //     this.input_[name] = newValue;
+        //   break;
+      }
+    }
+
+    connectedCallback() {
+      if (!this.hasAttribute("role")) this.setAttribute("role", "checkbox");
+      if (!this.hasAttribute("tabindex")) this.setAttribute("tabindex", 0);
     }
   }
-
-  connectedCallback() {
-
-    if (!this.hasAttribute('role'))
-      this.setAttribute('role', 'checkbox');
-    if (!this.hasAttribute('tabindex'))
-      this.setAttribute('tabindex', 0);
-
-  }
-
-});
+);
 
 let dragging = 0,
   root = document.documentElement,
-  target = document.getElementById('dragbar');
+  target = document.getElementById("dragbar");
 
 function clearJSEvents() {
   dragging = 0;
   root.removeEventListener("mousemove", resize);
-  document.body.classList.remove('resizing');
+  document.body.classList.remove("resizing");
 }
 
 function resize(e) {
-  root.style.setProperty("--left-width", e.pageX + 'px');
+  root.style.setProperty("--left-width", e.pageX + "px");
 }
 
-target.onmousedown = function(e) {
+target.onmousedown = function (e) {
   e.preventDefault();
   dragging = 1;
-  root.addEventListener('mousemove', resize);
-  document.body.classList.add('resizing');
+  root.addEventListener("mousemove", resize);
+  document.body.classList.add("resizing");
 };
 
-document.onmouseup = function() {
-  dragging ? clearJSEvents() : '';
+document.onmouseup = function () {
+  dragging ? clearJSEvents() : "";
 };

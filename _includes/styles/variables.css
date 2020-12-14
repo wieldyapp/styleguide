@@ -44,16 +44,16 @@
   --control-color-light: hsl(var(--control-color-h), var(--control-color-s), calc(var(--control-color-l) / .9));
   --control-color-dark: hsl(var(--control-color-h), var(--control-color-s), calc(var(--control-color-l) * .9));
 
-  --primary50: #f4fbf8; /* hsla(175, 67%, 13%, 1) */
-  --primary100: #e9f6f1;
-  --primary200: #c7e9dc; /* hsla(165, 70%, 17%, 1) */
-  --primary300: #a5dbc7;
-  --primary400: #62c19c;
-  --primary500: #1ea672;
-  --primary600: #1b9567;
-  --primary700: #177d56;
-  --primary800: #126444;
-  --primary900: #0f5138;
+  --primary50: #efffed;
+  --primary100: #cbf4c9;
+  --primary200: #85d996;
+  --primary300: #33c27f;
+  --primary400: #1ea672;
+  --primary500: #09825d;
+  --primary600: #0e6245;
+  --primary700: #0d4b3b;
+  --primary800: #0b3733;
+  --primary900: #082429;
 
   --gray50: #f7fafc;
   --gray100: #e3e8ee;
