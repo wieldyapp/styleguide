@@ -33,6 +33,16 @@
   --link-color-light: hsl(var(--link-color-h), var(--link-color-s), calc(var(--link-color-l) / .9));
   --link-color-dark: hsl(var(--link-color-h), var(--link-color-s), calc(var(--link-color-l) * .9));
   --link-color-darker: hsl(var(--link-color-h), var(--link-color-s), calc(var(--link-color-l) / .64));
+
+  --control-color-h: 234;
+  --control-color-s: 56%;
+  --control-color-l: 60%;
+  --control-color-hsl: var(--control-color-h), var(--control-color-s), var(--control-color-l);
+
+  --control-color: hsl(var(--control-color-hsl));
+
+  --control-color-light: hsl(var(--control-color-h), var(--control-color-s), calc(var(--control-color-l) / .9));
+  --control-color-dark: hsl(var(--control-color-h), var(--control-color-s), calc(var(--control-color-l) * .9));
 }
 
 .flex {
