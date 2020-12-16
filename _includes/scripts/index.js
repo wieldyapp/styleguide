@@ -1,15 +1,41 @@
-customElements.define(
-  "hello-world",
-  class extends HTMLElement {
-    constructor() {
-      super();
-    }
-    connectedCallback() {
-      this.innerHTML = `<button></button>`;
-      foo();
-    }
-  }
-);
+
+// customElements.define(
+//   'resize-bar',
+//   class extends HTMLElement {
+//     constructor() {
+//       super();
+//       this.attachShadow({ mode: 'open', delegatesFocus: false });
+
+//       const onResize = () => { };
+
+//       this.addEventListener('mousedown', (e) => {
+//         onResize();
+//       });
+//     }
+
+//     connectedCallback() {
+//       this.shadowRoot.innerHTML = `
+//         <style>
+//           :host {
+//             top: 0;
+//             height: 100%;
+//             position: absolute;
+//             right: -2px;
+//             width: 4px;
+//             opacity: 0;
+//             cursor: col-resize;
+//             background: var(--complementary-bg-color);
+//             transition: opacity 150ms ease-in-out 0s;
+//             min-width: unset;
+//             border-radius: unset;
+//             margin: 0;
+//             box-shadow: unset;
+//           }
+//         </style>
+//       `;
+//     }
+//   },
+// );
 
 // template markup
 // ===============================================================================================
@@ -84,16 +110,15 @@ const css = `
 // utils
 // ===============================================================================================
 
-const fireEvent = (host) =>
-  host.dispatchEvent(
-    new Event("change", {
-      bubbles: true,
-      composed: true,
-    })
-  );
+const fireEvent = (host) => host.dispatchEvent(
+  new Event('change', {
+    bubbles: true,
+    composed: true,
+  }),
+);
 
 customElements.define(
-  "scheme-switch",
+  'scheme-switch',
   class extends HTMLElement {
     // Identify the element as a form-associated custom element
     static get formAssociated() {
@@ -101,28 +126,29 @@ customElements.define(
     }
 
     static get observedAttributes() {
-      return ["disabled", "checked"];
+      return ['disabled', 'checked'];
     }
+
     constructor() {
       super();
       // Get access to the internal form control APIs
       this._internals = this.attachInternals();
 
-      this.attachShadow({ mode: "open", delegatesFocus: true });
+      this.attachShadow({ mode: 'open', delegatesFocus: true });
       this.shadowRoot.innerHTML = `<style>${css}</style>${html}`;
 
-      this.input_ = this.shadowRoot.querySelector("input");
+      this.input_ = this.shadowRoot.querySelector('input');
 
       // Do something if <label> is clicked.
-      this.addEventListener("click", () => {
-        let checked = this.toggleAttribute("checked");
+      this.addEventListener('click', () => {
+        const checked = this.toggleAttribute('checked');
         this.checked = checked;
         fireEvent(this);
       });
 
-      this.addEventListener("keypress", ({ metaKey, keyCode }) => {
+      this.addEventListener('keypress', ({ metaKey, keyCode }) => {
         if (keyCode === 32) {
-          let checked = this.toggleAttribute("checked");
+          const checked = this.toggleAttribute('checked');
           this.checked = checked;
           fireEvent(this);
         }
@@ -135,7 +161,7 @@ customElements.define(
     // New lifecycle callback. This is called when association with
     // <form> is changed.
     formAssociatedCallback(nullableForm) {
-      console.log("Form associated.");
+      console.log('Form associated.');
     }
 
     // New lifecycle callback. This is called when ‘disabled’ attribute of
@@ -150,13 +176,13 @@ customElements.define(
 
     // New lifecycle callback. This is called when the owner form is reset.
     formResetCallback() {
-      console.log("Form reset.");
+      console.log('Form reset.');
     }
 
     // New lifecycle callback. This is called when the browser wants to
     // restore user-visible state.
     formStateRestoreCallback(state, mode) {
-      console.log("Form state restore.");
+      console.log('Form state restore.');
     }
 
     // The following properties and methods aren't strictly required,
@@ -165,18 +191,23 @@ customElements.define(
     get form() {
       return this._internals.form;
     }
+
     get name() {
-      return this.getAttribute("name");
+      return this.getAttribute('name');
     }
+
     get type() {
       return this.localName;
     }
+
     get validity() {
       return this.internals_.validity;
     }
+
     get validationMessage() {
       return this.internals_.validationMessage;
     }
+
     get willValidate() {
       return this.internals_.willValidate;
     }
@@ -184,6 +215,7 @@ customElements.define(
     checkValidity() {
       return this.internals_.checkValidity();
     }
+
     reportValidity() {
       return this.internals_.reportValidity();
     }
@@ -193,9 +225,9 @@ customElements.define(
     // to the internal input
     attributeChangedCallback(name, oldValue, newValue) {
       switch (name) {
-        case "checked":
+        case 'checked':
           this.input_.checked = !this.input_.checked;
-          this.setAttribute("aria-checked", this.input_.checked);
+          this.setAttribute('aria-checked', this.input_.checked);
           break;
         // case 'disabled':
         //     this.input_[name] = newValue;
@@ -204,33 +236,61 @@ customElements.define(
     }
 
     connectedCallback() {
-      if (!this.hasAttribute("role")) this.setAttribute("role", "checkbox");
-      if (!this.hasAttribute("tabindex")) this.setAttribute("tabindex", 0);
+      if (!this.hasAttribute('role')) this.setAttribute('role', 'checkbox');
+      if (!this.hasAttribute('tabindex')) this.setAttribute('tabindex', 0);
     }
-  }
+  },
 );
 
-let dragging = 0,
-  root = document.documentElement,
-  target = document.getElementById("dragbar");
+let dragging = 0;
+const root = document.documentElement;
+const target = document.getElementById('dragbar');
 
-function clearJSEvents() {
+const clearJSEvents = () => {
   dragging = 0;
-  root.removeEventListener("mousemove", resize);
-  document.body.classList.remove("resizing");
-}
+  root.removeEventListener('mousemove', resize);
+  document.body.classList.remove('resizing');
+  localStorage.setItem(
+    '--base-nav-ideal-width',
+    getComputedStyle(document.documentElement).getPropertyValue('--base-nav-ideal-width'),
+  );
+};
 
-function resize(e) {
-  root.style.setProperty("--left-width", e.pageX + "px");
-}
+const resize = (e) => {
+  root.style.setProperty('--base-nav-ideal-width', `${e.pageX}px`);
+};
 
-target.onmousedown = function (e) {
+target.onmousedown = (e) => {
   e.preventDefault();
   dragging = 1;
-  root.addEventListener("mousemove", resize);
-  document.body.classList.add("resizing");
+  root.addEventListener('mousemove', resize);
+  document.body.classList.add('resizing');
 };
 
-document.onmouseup = function () {
-  dragging ? clearJSEvents() : "";
+document.onmouseup = () => {
+  dragging ? clearJSEvents() : '';
 };
+
+// const onDrag = callback => {
+//   const listen = action =>
+//     Object.keys(events).forEach(event => {
+//       console.log(action, event);
+//       target[`${action}EventListener`](`mouse${event}`, events[event]);
+//     });
+//     const end = () => listen("remove");
+//     const events = {
+//       move: callback,
+//       up: end
+//     };
+//     listen("add");
+// };
+
+// target.addEventListener('mousedown', e => {
+//   const callback = e => {
+//     // console.log(e);
+//     //root.style.setProperty("--left-width", e.pageX + "px");
+//     console.log('hello');
+//   };
+//   callback.call(e);
+//   onDrag(callback);
+// });

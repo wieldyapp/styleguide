@@ -4,9 +4,9 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--heading-font);
   color: var(--heading-color);
   font-weight: 700;
+  font-family: var(--heading-font);
 }
 
 h1 { font-size: 2rem; }
@@ -16,12 +16,13 @@ h4 { font-size: 1.25rem; }
 h5 { font-size: 1rem; }
 h6 { font-size: 0.8rem; }
 
-p, li {
+p,
+li {
   margin: 1rem 0;
 }
 
 a:any-link {
-  text-decoration: none;
   color: var(--gray400);
   font-weight: 500;
+  text-decoration: none;
 }
