@@ -6,15 +6,152 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="/styles.css" rel="stylesheet">
+  <script>
+    const leftWidth = localStorage.getItem('--base-nav-ideal-width')
+      ?? getComputedStyle(document.documentElement).getPropertyValue('--base-nav-ideal-width');
+    document.documentElement.style.setProperty('--base-nav-ideal-width', leftWidth);
+  </script>
 </head>
 
 <body>
   <nav>
     <scheme-switch checked></scheme-switch>
     <a href="#">Introduction</a>
+    <details open>
+      <summary><span>THE ELEMENTS</span></summary>
+      <ul>
+        <li>
+          <a href="#">Create an Elements object</a>
+        </li>
+        <li>
+          <a href="#">Create an Element</a>
+        </li>
+        <li>
+          <a href="#">Get an Element</a>
+        </li>
+        <li>
+          <a href="#">Create an Elements object</a>
+        </li>
+        <li>
+          <a href="#">Create an Element</a>
+        </li>
+        <li>
+          <a href="#">Get an Element</a>
+        </li>
+        <li>
+          <a href="#">Create an Elements object</a>
+        </li>
+        <li>
+          <a href="#">Create an Element</a>
+        </li>
+        <li>
+          <a href="#">Get an Element</a>
+        </li>
+        <li>
+          <a href="#">Create an Elements object</a>
+        </li>
+        <li>
+          <a href="#">Create an Element</a>
+        </li>
+        <li>
+          <a href="#">Get an Element</a>
+        </li>
+        <li>
+          <a href="#">Create an Elements object</a>
+        </li>
+        <li>
+          <a href="#">Create an Element</a>
+        </li>
+        <li>
+          <a href="#">Get an Element</a>
+        </li>
+        <li>
+          <a href="#">Create an Elements object</a>
+        </li>
+        <li>
+          <a href="#">Create an Element</a>
+        </li>
+        <li>
+          <a href="#">Get an Element</a>
+        </li>
+        <li>
+          <a href="#">Create an Elements object</a>
+        </li>
+        <li>
+          <a href="#">Create an Element</a>
+        </li>
+        <li>
+          <a href="#">Get an Element</a>
+        </li>
+      </ul>
+    </details>
     <details>
-      <summary>THE ELEMENTS</summary>
-      <p>stuff</p>
+      <summary><span>THE ELEMENTS</span></summary>
+      <ul>
+        <li>
+          <a href="#">Create an Elements object</a>
+        </li>
+        <li>
+          <a href="#">Create an Element</a>
+        </li>
+        <li>
+          <a href="#">Get an Element</a>
+        </li>
+        <li>
+          <a href="#">Create an Elements object</a>
+        </li>
+        <li>
+          <a href="#">Create an Element</a>
+        </li>
+        <li>
+          <a href="#">Get an Element</a>
+        </li>
+        <li>
+          <a href="#">Create an Elements object</a>
+        </li>
+        <li>
+          <a href="#">Create an Element</a>
+        </li>
+        <li>
+          <a href="#">Get an Element</a>
+        </li>
+        <li>
+          <a href="#">Create an Elements object</a>
+        </li>
+        <li>
+          <a href="#">Create an Element</a>
+        </li>
+        <li>
+          <a href="#">Get an Element</a>
+        </li>
+        <li>
+          <a href="#">Create an Elements object</a>
+        </li>
+        <li>
+          <a href="#">Create an Element</a>
+        </li>
+        <li>
+          <a href="#">Get an Element</a>
+        </li>
+        <li>
+          <a href="#">Create an Elements object</a>
+        </li>
+        <li>
+          <a href="#">Create an Element</a>
+        </li>
+        <li>
+          <a href="#">Get an Element</a>
+        </li>
+        <li>
+          <a href="#">Create an Elements object</a>
+        </li>
+        <li>
+          <a href="#">Create an Element</a>
+        </li>
+        <li>
+          <a href="#">Get an Element</a>
+        </li>
+      </ul>
     </details>
     <div id="dragbar"></div>
   </nav>
@@ -75,7 +212,7 @@
         </tbody>
       </table>
       <pre>
-          <code><span>&lt;</span>checkbox-switch <span>selected</span><span>&gt;&lt;</span>/checkbox-switch<span>&gt;</span></code>
+          <code><span>&lt;</span>checkbox-switch <span>selected</span><span>&gt;&lt;/</span>checkbox-switch<span>&gt;</span></code>
         </pre>
     </div>
     <div>
@@ -135,9 +272,7 @@
         </tbody>
       </table>
     </div>
-
   </main>
-
 </body>
 
 <script async type=module src=/scripts.js></script>
