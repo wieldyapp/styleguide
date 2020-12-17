@@ -13,14 +13,11 @@ html {
   }
 }
 
-
 ul {
   list-style-type: none;
 }
 
 body {
-  /* min-height: 100%; */
-
   display: grid;
   grid-template-areas:
     "nav header"
@@ -46,27 +43,20 @@ nav {
 
   grid-area: nav;
   padding: 19px 13px 19px 13px;
-
-  /* align-self: normal; */
-
   overflow-y: auto;
 
   background-color: var(---main-bg-color);
   box-shadow: var(--shadow--keyline);
 }
 
-div {
-
+main > div {
   display: block;
   box-sizing: border-box;
   min-width: 20%;
-
-  /* overflow: hidden; */
+  overflow: hidden; /* stop background bleeding */
 
   background-color: var(--main-bg-color);
   background-clip: padding-box;
-
-  /* border: solid 1px var(--main-border-color); */
   border-radius: 4px;
   box-shadow: var(--shadow--keyline);
 }
@@ -165,11 +155,11 @@ label > checkbox-switch {
   margin-right: 0.5rem;
 }
 
-h2 {
+/* h2 {
   font-size: 1.2rem;
   text-transform: uppercase;
   text-indent: 2rem;
-}
+} */
 
 img-thumbnail {
   transition: opacity 150ms ease-out;

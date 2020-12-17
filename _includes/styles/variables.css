@@ -1,5 +1,6 @@
 :root {
-  --font-family: -apple-system, system-ui, "Segoe UI", roboto, "Helvetica Neue", helvetica, arial, sans-serif;
+  --font-family: -apple-system, system-ui, "Segoe UI", roboto, "Helvetica Neue",
+    helvetica, arial, sans-serif;
   --base-line-height: 1.6;
   --base-font-size: 0.875rem;
   --color-primary-50: #efffed;
@@ -45,7 +46,8 @@
   --link-color-h: 211;
   --link-color-s: 100%;
   --link-color-l: 50%;
-  --link-color-hsl: var(--link-color-h), var(--link-color-s), var(--link-color-l);
+  --link-color-hsl: var(--link-color-h), var(--link-color-s),
+    var(--link-color-l);
   --link-color: hsl(var(--link-color-hsl));
   --link-color-10: hsla(var(--link-color-hsl), 0.1);
   --link-color-20: hsla(var(--link-color-hsl), 0.2);
@@ -59,7 +61,8 @@
   --control-color-h: 234;
   --control-color-s: 56%;
   --control-color-l: 60%;
-  --control-color-hsl: var(--control-color-h), var(--control-color-s), var(--control-color-l);
+  --control-color-hsl: var(--control-color-h), var(--control-color-s),
+    var(--control-color-l);
   --control-color: hsl(var(--control-color-hsl));
   --primary50: #efffed;
   --primary100: #cbf4c9;
@@ -119,5 +122,4 @@
   --syntax-light-meta: var(--gray500);
   --syntax-light-operator: var(--blue500);
   --syntax-light-string: var(--green500);
-
 }

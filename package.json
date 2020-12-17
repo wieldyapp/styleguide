@@ -19,15 +19,14 @@
   "homepage": "https://github.com/wieldyapp/styleguide#readme",
   "devDependencies": {
     "@11ty/eleventy": "^0.11.1",
-    "eslint": "^7.15.0",
-    "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-plugin-import": "^2.22.1",
     "prettier": "^2.2.1",
     "prettier-stylelint": "^0.4.2",
     "stylelint": "^13.8.0",
+    "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-rational-order": "^0.1.2",
     "stylelint-config-standard": "^20.0.0",
-    "stylelint-order": "^4.1.0"
+    "stylelint-order": "^4.1.0",
+    "stylelint-prettier": "^1.1.2"
   },
   "dependencies": {}
 }
