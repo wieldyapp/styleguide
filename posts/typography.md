@@ -6,7 +6,7 @@ layout: base.liquid
 
 <main>
   <div style="max-width:var(--measure-wide);padding: 3rem;">
-    <div style="display:flex;">
+    <div class=flex>
       <div>
         <h1>Heaing 1</h1>
       </div>
@@ -14,7 +14,7 @@ layout: base.liquid
         <h1 class="plus">Heaing 1+</h1>
       </div>
     </div>
-    <div style="display:flex;">
+    <div class=flex>
       <div>
         <h2>Heaing 2</h2>
       </div>
@@ -22,7 +22,7 @@ layout: base.liquid
         <h2 class="plus">Heaing 2+</h2>
       </div>
     </div>
-    <div style="display:flex;">
+    <div class=flex>
       <div>
         <h3>Heaing 3</h3>
       </div>
@@ -30,7 +30,7 @@ layout: base.liquid
         <h3 class="plus">Heaing 3+</h3>
       </div>
     </div>
-    <div style="display:flex;">
+    <div class=flex>
       <div>
         <h4>Heaing 4</h4>
       </div>

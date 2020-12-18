@@ -28,7 +28,7 @@
     --color-primary-600: #1c1d20;
     --color-primary-700: #17181a;
     --color-primary-800: #131315;
-    --color-primary-900: #0f1011;
+    --color-primary-900: rgb(15, 16, 17);
     --color-primary-focus: hsl(190, 97%, 38%);
 
     --color-secondary-50: #000;
@@ -45,10 +45,10 @@
     --color-control: var(--color-highlight);
     --color-control-border: var(--color-success);
 
-    --elevation: rgba(0, 0, 0, 0.25) 0px 0px 24px;
+    --elevation: rgba(0, 0, 0, 0.25) 0px 0px 16px;
 
 
-    /* --- */
+    /* --- */;
     --main-border-color: #303236;
     --main-font-color: #f7f8f8;
     --shadow--keyline: var(--main-border-color) 0 0 0 1px;
