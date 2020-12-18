@@ -273,15 +273,15 @@ details[open] summary > span::after {
 #dragbar {
   position: absolute;
   top: 0;
-  right: -2px;
+  right: 0;
 
-  width: 4px;
+  width: 6px;
   min-width: unset;
   height: 100%;
   margin: 0;
 
   background: white;
-  background: var(--color-primary-800);
+  background: var(--color-background-tint);
   border-radius: unset;
   box-shadow: unset;
   cursor: col-resize;
