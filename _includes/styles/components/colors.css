@@ -1,0 +1,10 @@
+.flex {
+  display: flex;
+  width: 50%;
+  padding: 0;
+}
+
+.flex > div {
+  flex: 1;
+  height: calc(100vw / 20);
+}

@@ -1,0 +1,71 @@
+---
+title: Input
+date: 2020-02-01
+layout: base.liquid
+---
+
+<main>
+  <div>
+    <table>
+      <thead>
+        <tr>
+          <th>Status</th>
+          <th>Mission name</th>
+          <th>Activated</th>
+          <th>People involved</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <text-input
+              pattern="[1-9]{1}"
+              required=""
+              aria-required="true"
+              tabindex="0"
+            ></text-input>
+          </td>
+          <td>
+            <strong>From Russia with Love (1963)</strong>
+          </td>
+          <td>3 Days Ago</td>
+          <td>
+            <strong>548</strong>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <text-input placeholder="Placeholder" tabindex="0"></text-input>
+          </td>
+          <td>
+            <strong>From Russia with Love (1963)</strong>
+          </td>
+          <td>3 Days Ago</td>
+          <td>
+            <strong>548</strong>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <text-input
+              required=""
+              value="Value"
+              aria-required="true"
+              tabindex="0"
+            ></text-input>
+          </td>
+          <td>
+            <strong>From Russia with Love (1963)</strong>
+          </td>
+          <td>3 Days Ago</td>
+          <td>
+            <strong>548</strong>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <pre>
+      <code><span>&lt;</span>text-input placeholder<span>="</span>Placeholder<span>"</span> required<span>&gt;&lt;/</span>text-input<span>&gt;</span></code>
+    </pre>
+  </div>
+</main>

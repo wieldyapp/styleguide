@@ -1,4 +1,3 @@
-
 // customElements.define(
 //   'resize-bar',
 //   class extends HTMLElement {
@@ -82,16 +81,16 @@ const css = `
   }
 
   :host([checked]) {
-    background-color: var(--green800);
+    background-color: var(--color-background-tint);
     /*box-shadow: 0 0 0 1px #36AF47;*/
     border:none;
   }
 
   :host([checked])::after {
     left: 13px;
-    background-color: var(--green900);
-    box-shadow: 0 0 0 1px var(--green700);
-    background-image: url('data:image/svg+xml;utf8, <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M7.914 0C7.09314 1.16174 6.65291 2.54952 6.654 3.972C6.654 7.847 9.867 10.989 13.832 10.989C14.775 10.989 15.675 10.811 16.5 10.489C15.423 13.688 12.34 16 8.704 16C4.174 16 0.5 12.41 0.5 7.982C0.5 3.814 3.754 0.389 7.914 0Z" fill="rgb(14, 98, 69)"/></svg>');
+    background-color: var(--color-primary-500);
+    box-shadow: 0 0 0 1px var(--main-border-color);
+    background-image: url('data:image/svg+xml;utf8, <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M7.914 0C7.09314 1.16174 6.65291 2.54952 6.654 3.972C6.654 7.847 9.867 10.989 13.832 10.989C14.775 10.989 15.675 10.811 16.5 10.489C15.423 13.688 12.34 16 8.704 16C4.174 16 0.5 12.41 0.5 7.982C0.5 3.814 3.754 0.389 7.914 0Z" fill="rgb(15 16 17)"/></svg>');
   }
 
   :host([disabled])::after {
@@ -110,15 +109,16 @@ const css = `
 // utils
 // ===============================================================================================
 
-const fireEvent = (host) => host.dispatchEvent(
-  new Event('change', {
-    bubbles: true,
-    composed: true,
-  }),
-);
+const fireEvent = (host) =>
+  host.dispatchEvent(
+    new Event("change", {
+      bubbles: true,
+      composed: true,
+    })
+  );
 
 customElements.define(
-  'scheme-switch',
+  "scheme-switch",
   class extends HTMLElement {
     // Identify the element as a form-associated custom element
     static get formAssociated() {
@@ -126,7 +126,7 @@ customElements.define(
     }
 
     static get observedAttributes() {
-      return ['disabled', 'checked'];
+      return ["disabled", "checked"];
     }
 
     constructor() {
@@ -134,21 +134,21 @@ customElements.define(
       // Get access to the internal form control APIs
       this._internals = this.attachInternals();
 
-      this.attachShadow({ mode: 'open', delegatesFocus: true });
+      this.attachShadow({ mode: "open", delegatesFocus: true });
       this.shadowRoot.innerHTML = `<style>${css}</style>${html}`;
 
-      this.input_ = this.shadowRoot.querySelector('input');
+      this.input_ = this.shadowRoot.querySelector("input");
 
       // Do something if <label> is clicked.
-      this.addEventListener('click', () => {
-        const checked = this.toggleAttribute('checked');
+      this.addEventListener("click", () => {
+        const checked = this.toggleAttribute("checked");
         this.checked = checked;
         fireEvent(this);
       });
 
-      this.addEventListener('keypress', ({ metaKey, keyCode }) => {
+      this.addEventListener("keypress", ({ metaKey, keyCode }) => {
         if (keyCode === 32) {
-          const checked = this.toggleAttribute('checked');
+          const checked = this.toggleAttribute("checked");
           this.checked = checked;
           fireEvent(this);
         }
@@ -161,7 +161,7 @@ customElements.define(
     // New lifecycle callback. This is called when association with
     // <form> is changed.
     formAssociatedCallback(nullableForm) {
-      console.log('Form associated.');
+      console.log("Form associated.");
     }
 
     // New lifecycle callback. This is called when ‘disabled’ attribute of
@@ -176,13 +176,13 @@ customElements.define(
 
     // New lifecycle callback. This is called when the owner form is reset.
     formResetCallback() {
-      console.log('Form reset.');
+      console.log("Form reset.");
     }
 
     // New lifecycle callback. This is called when the browser wants to
     // restore user-visible state.
     formStateRestoreCallback(state, mode) {
-      console.log('Form state restore.');
+      console.log("Form state restore.");
     }
 
     // The following properties and methods aren't strictly required,
@@ -193,7 +193,7 @@ customElements.define(
     }
 
     get name() {
-      return this.getAttribute('name');
+      return this.getAttribute("name");
     }
 
     get type() {
@@ -225,9 +225,9 @@ customElements.define(
     // to the internal input
     attributeChangedCallback(name, oldValue, newValue) {
       switch (name) {
-        case 'checked':
+        case "checked":
           this.input_.checked = !this.input_.checked;
-          this.setAttribute('aria-checked', this.input_.checked);
+          this.setAttribute("aria-checked", this.input_.checked);
           break;
         // case 'disabled':
         //     this.input_[name] = newValue;
@@ -236,39 +236,41 @@ customElements.define(
     }
 
     connectedCallback() {
-      if (!this.hasAttribute('role')) this.setAttribute('role', 'checkbox');
-      if (!this.hasAttribute('tabindex')) this.setAttribute('tabindex', 0);
+      if (!this.hasAttribute("role")) this.setAttribute("role", "checkbox");
+      if (!this.hasAttribute("tabindex")) this.setAttribute("tabindex", 0);
     }
-  },
+  }
 );
 
 let dragging = 0;
 const root = document.documentElement;
-const target = document.getElementById('dragbar');
+const target = document.getElementById("dragbar");
 
 const clearJSEvents = () => {
   dragging = 0;
-  root.removeEventListener('mousemove', resize);
-  document.body.classList.remove('resizing');
+  root.removeEventListener("mousemove", resize);
+  document.body.classList.remove("resizing");
   localStorage.setItem(
-    '--base-nav-ideal-width',
-    getComputedStyle(document.documentElement).getPropertyValue('--base-nav-ideal-width'),
+    "--base-nav-ideal-width",
+    getComputedStyle(document.documentElement).getPropertyValue(
+      "--base-nav-ideal-width"
+    )
   );
 };
 
 const resize = (e) => {
-  root.style.setProperty('--base-nav-ideal-width', `${e.pageX}px`);
+  root.style.setProperty("--base-nav-ideal-width", `${e.pageX}px`);
 };
 
 target.onmousedown = (e) => {
   e.preventDefault();
   dragging = 1;
-  root.addEventListener('mousemove', resize);
-  document.body.classList.add('resizing');
+  root.addEventListener("mousemove", resize);
+  document.body.classList.add("resizing");
 };
 
 document.onmouseup = () => {
-  dragging ? clearJSEvents() : '';
+  dragging ? clearJSEvents() : "";
 };
 
 // const onDrag = callback => {
@@ -294,3 +296,41 @@ document.onmouseup = () => {
 //   callback.call(e);
 //   onDrag(callback);
 // });
+
+
+  //identify the toggle switch HTML element
+  const toggleSwitch = document.querySelector('scheme-switch');
+
+  //function that changes the theme, and sets a localStorage variable to track the theme between page loads
+  function switchTheme(e) {
+      if (e.target.checked) {
+          localStorage.setItem('theme', 'dark');
+          document.documentElement.setAttribute('data-theme', 'dark');
+          toggleSwitch.checked = true;
+      } else {
+          localStorage.setItem('theme', 'light');
+          document.documentElement.setAttribute('data-theme', 'light');
+          toggleSwitch.checked = false;
+      }
+  }
+
+  //listener for changing themes
+  toggleSwitch.addEventListener('change', switchTheme, false);
+
+  //pre-check the dark-theme checkbox if dark-theme is set
+  if (document.documentElement.getAttribute("data-theme") == "dark"){
+      toggleSwitch.checked = true;
+  }
+
+  const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+  darkModeMediaQuery.addListener((e) => {
+    const darkModeOn = e.matches;
+    console.log(`Dark mode is ${darkModeOn ? '🌒 on' : '☀️ off'}.`);
+  });
+  if (window.matchMedia('(prefers-color-scheme)').media !== 'not all') {
+    console.log('🎉 Dark mode is supported');
+  }
+
+  document.querySelector('header button:first-of-type').addEventListener('click', () => {
+    document.querySelector('nav').toggleAttribute('data-open');
+  });
