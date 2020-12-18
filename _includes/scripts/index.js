@@ -81,16 +81,16 @@ const css = `
   }
 
   :host([checked]) {
-    background-color: var(--green800);
+    background-color: var(--color-background-tint);
     /*box-shadow: 0 0 0 1px #36AF47;*/
     border:none;
   }
 
   :host([checked])::after {
     left: 13px;
-    background-color: var(--green900);
-    box-shadow: 0 0 0 1px var(--green700);
-    background-image: url('data:image/svg+xml;utf8, <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M7.914 0C7.09314 1.16174 6.65291 2.54952 6.654 3.972C6.654 7.847 9.867 10.989 13.832 10.989C14.775 10.989 15.675 10.811 16.5 10.489C15.423 13.688 12.34 16 8.704 16C4.174 16 0.5 12.41 0.5 7.982C0.5 3.814 3.754 0.389 7.914 0Z" fill="rgb(14, 98, 69)"/></svg>');
+    background-color: var(--color-primary-500);
+    box-shadow: 0 0 0 1px var(--main-border-color);
+    background-image: url('data:image/svg+xml;utf8, <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M7.914 0C7.09314 1.16174 6.65291 2.54952 6.654 3.972C6.654 7.847 9.867 10.989 13.832 10.989C14.775 10.989 15.675 10.811 16.5 10.489C15.423 13.688 12.34 16 8.704 16C4.174 16 0.5 12.41 0.5 7.982C0.5 3.814 3.754 0.389 7.914 0Z" fill="rgb(15 16 17)"/></svg>');
   }
 
   :host([disabled])::after {

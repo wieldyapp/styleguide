@@ -2,9 +2,8 @@
   --font-family: -apple-system, system-ui, "Segoe UI", roboto, "Helvetica Neue", helvetica, arial, sans-serif;
   --base-line-height: 1.6;
   --base-font-size: 0.875rem;
-  --base-nav-min-width: 220px;
   --base-nav-ideal-width: 250px;
-  --base-nav-max-width: 50vw;
+  --ideal-nav: 220px, var(--base-nav-ideal-width), 50vw;
   color-scheme: dark light;
 }
 
