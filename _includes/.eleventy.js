@@ -1,8 +1,12 @@
 module.exports = function (eleventy) {
 
-  // Add related posts
-  eleventy.addLiquidShortcode("related", (title, url) => `
-  <a href="${url}" class="related">${title}</a>
-  `);
+  // Creates custom collection "elements"
+  eleventy.addCollection("elements", function(collection) {
+    return collection.getFilteredByGlob("/elements/*.liquid");
+  });
+  // Creates custom collection "components"
+  eleventy.addCollection("components", function(collection) {
+      return collection.getFilteredByGlob("/components/*.liquid");
+  });
 
 };

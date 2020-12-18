@@ -5,7 +5,7 @@ layout: base.liquid
 ---
 
 <main>
-  <div style="padding: 3rem">
+  <div style="max-width:var(--measure-wide);padding: 3rem;">
     <div style="display:flex;">
       <div>
         <h1>Heaing 1</h1>

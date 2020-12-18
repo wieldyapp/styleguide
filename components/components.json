@@ -1,0 +1,5 @@
+{
+  "layout": "base.liquid",
+  "permalink": "components/{{ page.fileSlug }}/",
+  "tags": ["components"]
+}
