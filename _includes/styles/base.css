@@ -5,6 +5,9 @@ html {
   height: 100vh;
 
   font-family: "Inter", sans-serif;
+
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 @supports (font-variation-settings: normal) {
@@ -34,28 +37,32 @@ body {
   background-color: var(--color-background);
 }
 
+header {
+  display: flex;
+  grid-area: header;
+  align-items: center;
+  padding: 1rem;
+}
+
 nav {
   position: relative;
 
   grid-area: nav;
-  padding: 19px 13px 19px 13px;
-
+  padding: 19px 16px 19px 16px;
   overflow-y: auto;
 
-  background-color: var(---main-bg-color);
+  background-color: var(--color-background);
   box-shadow: var(--shadow--keyline);
 }
 
-div {
+main > div {
   display: block;
   box-sizing: border-box;
   min-width: 20%;
-
   overflow: hidden; /* stop background bleeding */
 
-  background-color: var(--main-bg-color);
+  background-color: var(--color-background-tint);
   background-clip: padding-box;
-
   border-radius: 4px;
   box-shadow: var(--shadow--keyline);
 }
@@ -89,8 +96,8 @@ toggle-switch {
 }
 
 toggle-switch[checked] {
-  background-color: var(--primary800);
-  box-shadow: 0 0 0 1px var(--primary800);
+  background-color: var(--color-primary-800);
+  box-shadow: 0 0 0 1px var(--color-primary-800);
 }
 
 toggle-switch::after {
@@ -145,8 +152,8 @@ checkbox-switch {
 checkbox-switch:not([disabled])::before {
   background: linear-gradient(
     0deg,
-    var(--primary800) 0%,
-    var(--primary700) 100%
+    var(--color-primary-800) 0%,
+    var(--color-primary-700) 100%
   );
 }
 
@@ -154,11 +161,11 @@ label > checkbox-switch {
   margin-right: 0.5rem;
 }
 
-h2 {
+/* h2 {
   font-size: 1.2rem;
   text-transform: uppercase;
   text-indent: 2rem;
-}
+} */
 
 img-thumbnail {
   transition: opacity 150ms ease-out;
@@ -189,7 +196,7 @@ pre {
   display: flex;
   padding: 2rem;
 
-  background: var(--color-primary-800);
+  background: var(--color-primary-600);
 }
 
 code {
@@ -262,15 +269,15 @@ details[open] summary > span::after {
 #dragbar {
   position: absolute;
   top: 0;
-  right: -2px;
+  right: 0;
 
-  width: 4px;
+  width: 6px;
   min-width: unset;
   height: 100%;
   margin: 0;
 
   background: white;
-  background: var(--color-primary-800);
+  background: var(--color-background-tint);
   border-radius: unset;
   box-shadow: unset;
   cursor: col-resize;
