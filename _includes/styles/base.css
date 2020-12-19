@@ -244,7 +244,9 @@ summary {
   user-select: none;
 }
 
-summary::-webkit-details-marker {
+summary { list-style-type: none; } /* Firefox */
+summary::-webkit-details-marker, /* Chrome */
+summary::marker {
   display: none;
 }
 
