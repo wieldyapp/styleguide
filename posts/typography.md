@@ -5,7 +5,7 @@ layout: base.liquid
 ---
 
 <main>
-  <div style="max-width:var(--measure-wide);padding: 3rem;">
+  <div>
     <div class=flex>
       <div>
         <h1>Heaing 1</h1>
@@ -38,7 +38,7 @@ layout: base.liquid
         <h4 class="plus">Heaing 4+</h4>
       </div>
     </div>
-    <div style="display:flex;max-width:50vw">
+    <div>
       <div>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent suscipit convallis ex at sollicitudin. Vivamus maximus tortor vitae imperdiet volutpat. Morbi at tortor massa. Nulla facilisi. Aliquam tincidunt porta ante a rhoncus. Quisque dapibus tellus sit amet felis tincidunt, eget varius odio hendrerit. Sed felis purus, consequat vitae rhoncus vel, efficitur et lorem. Fusce cursus orci odio, id tempor augue scelerisque quis. Etiam vestibulum maximus leo, eu bibendum velit. Cras varius ipsum ac mollis efficitur. Curabitur sagittis elit non dui accumsan, vel gravida ante feugiat. Praesent maximus luctus mi vel venenatis. Nulla sit amet facilisis sem, sed dictum libero. Nulla mollis est sit amet turpis pulvinar, et pretium purus aliquet.</p>
       <p>Aliquam vitae elit ut dui sodales tempor. Mauris vestibulum finibus tortor vel congue. Phasellus sit amet mollis nibh. Vivamus gravida egestas bibendum. Nulla eu accumsan sem. Cras at tortor porttitor, egestas dui a, accumsan tortor. Curabitur bibendum auctor libero, a tincidunt metus luctus sed. Donec porttitor porta est id laoreet.</p>

@@ -8,6 +8,7 @@ html {
 
   -webkit-user-select: none;
   user-select: none;
+  scroll-behavior: smooth;
 }
 
 @supports (font-variation-settings: normal) {
@@ -41,30 +42,43 @@ header {
   display: flex;
   grid-area: header;
   align-items: center;
-  padding: 1rem;
+
+  box-sizing: content-box;
+
+  height: 56px;
+  /* padding: 1rem; */
+
+  background-color: var(--color-background);
+
+  border-bottom: solid 1px var(--main-border-color);
 }
 
 nav {
   position: relative;
 
   grid-area: nav;
-  padding: 19px 16px 19px 16px;
+  padding: 0 16px 19px 16px;
   overflow-y: auto;
 
   background-color: var(--color-background);
-  box-shadow: var(--shadow--keyline);
+  box-shadow: 0px 1px 0px 1px var(--main-border-color);
+
+
+  /* box-shadow: var(--shadow--keyline); */
 }
 
 main > div {
   display: block;
   box-sizing: border-box;
-  min-width: 20%;
+  /* min-width: 20%; */
   overflow: hidden; /* stop background bleeding */
 
   background-color: var(--color-background-tint);
   background-clip: padding-box;
   border-radius: 4px;
   box-shadow: var(--shadow--keyline);
+
+
 }
 
 nav div {
@@ -74,13 +88,14 @@ nav div {
 }
 
 main {
-  display: grid;
+  /* display: grid; */
   grid-area: content;
-  grid-gap: 2rem;
+  /* grid-gap: 2rem; */
   box-sizing: border-box;
   padding: 36px 23px 36px 13px;
   overflow-y: auto;
-  place-items: center;
+  /* place-items: center; */
+
 }
 
 scheme-switch,
@@ -187,10 +202,10 @@ img-thumbnail:not([loaded]) {
   border: 0;
 }
 
-scheme-switch {
+/* scheme-switch {
   display: block;
   margin-bottom: 2rem;
-}
+} */
 
 pre {
   display: flex;

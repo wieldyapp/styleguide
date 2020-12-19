@@ -4,6 +4,17 @@
   --base-font-size: 0.875rem;
   --base-nav-ideal-width: 250px;
   --ideal-nav: 220px, var(--base-nav-ideal-width), 50vw;
+  /**
+   * Layers
+   * Applied as z-index
+   */
+   --layer-1: 10;
+   --layer-2: 20;
+   --layer-3: 30;
+   --layer-4: 40;
+   --layer-5: 50;
+   --layer-6: 60;
+   --layer-top: 2147483647;
   color-scheme: dark light;
 }
 

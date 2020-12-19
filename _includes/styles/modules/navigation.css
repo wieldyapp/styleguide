@@ -1,0 +1,34 @@
+nav header {
+  position: sticky;
+  top: 0;
+
+  z-index: var(--layer-1);
+
+  display: flex;
+
+  grid-area: auto;
+
+  align-items: center;
+
+  background-color: var(--color-background);
+  border: none;
+}
+
+nav header::after {
+
+  position: absolute;
+  bottom: -25px;
+
+  width: 100%;
+  height: 25px;
+
+  background: linear-gradient(0deg, rgba(255,255,255,0) 50%, rgba(31,32,35,1) 100%);
+
+  content: '';
+}
+
+@media (max-width: 1023px) {
+  nav header {
+    padding-top: 30px;
+  }
+}
