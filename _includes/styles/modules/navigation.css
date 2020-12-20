@@ -28,6 +28,7 @@ nav header::after {
 
 
   content: '';
+  pointer-events: none;
 }
 
 nav ul {

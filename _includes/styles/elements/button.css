@@ -52,8 +52,7 @@ header button:first-of-type {
     z-index: 100;
 
     display: inline-flex;
-    margin-right: 16px;
-    margin-left: calc((0 - max(16px, env(safe-area-inset-left))));
+    margin-left: -8px;
   }
 
   nav {
