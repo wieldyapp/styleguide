@@ -1,20 +1,15 @@
-@import url("https://rsms.me/inter/inter.css");
-
 html {
   width: 100%;
   height: 100vh;
 
-  font-family: "Inter", sans-serif;
+  font-size: var(--scale-0);
+
+  font-family: var(--font-family-standard);
+  line-height: var(--leading-normal);
 
   -webkit-user-select: none;
   user-select: none;
   scroll-behavior: smooth;
-}
-
-@supports (font-variation-settings: normal) {
-  html {
-    font-family: "Inter var", sans-serif;
-  }
 }
 
 ul {
@@ -35,7 +30,7 @@ body {
 
   overflow: hidden;
 
-  color: var(--main-font-color);
+  color: var(--color-neutral-50);
 
   background-color: var(--color-background);
 }
@@ -43,30 +38,31 @@ body {
 header {
   display: flex;
   grid-area: header;
+
   align-items: center;
 
   box-sizing: content-box;
 
   height: 56px;
-  /* padding: 1rem; */
 
-  background-color: var(--color-background);
+  padding-top: env(safe-area-inset-top);
+  padding-right: max(16px,env(safe-area-inset-right));
+  padding-left: max(16px,env(safe-area-inset-left));
 
   border-bottom: solid 1px var(--main-border-color);
+
 }
 
 nav {
   position: relative;
 
   grid-area: nav;
-  padding: 0 16px 19px 16px;
+  padding: 0 16px 19px max(16px,env(safe-area-inset-left));
   overflow-y: auto;
 
   background-color: var(--color-background);
-  box-shadow: 0px 1px 0px 1px var(--main-border-color);
+  border-right: solid 1px var(--main-border-color);
 
-
-  /* box-shadow: var(--shadow--keyline); */
 }
 
 /* main > div {
@@ -84,48 +80,85 @@ nav {
 nav div {
   display: flex;
   justify-content: space-between;
-  margin-left: 7px;
+  margin-left: var(--spacing-000);
 }
 
 main {
-  /* display: grid; */
   grid-area: content;
-  /* grid-gap: 2rem; */
   box-sizing: border-box;
   padding: 36px 23px 36px 13px;
+  padding-right: max(16px,env(safe-area-inset-right));
+  padding-bottom: max(16px,env(safe-area-inset-bottom));
+  padding-left: max(16px,env(safe-area-inset-left));
   overflow-y: auto;
-  /* place-items: center; */
-
-}
-
-scheme-switch,
-toggle-switch,
-checkbox-switch {
-  vertical-align: middle;
-
-  outline: none;
 }
 
 toggle-switch {
-  box-shadow: 0 0 0 1px var(--main-border-color);
+  background-color: var(--color-control-backface);
+  box-shadow: 0 0 0 1px var(--color-control-border);
 }
 
-toggle-switch[checked] {
-  background-color: var(--color-primary-800);
-  box-shadow: 0 0 0 1px var(--color-primary-800);
+toggle-switch:not([disabled]) {
+  cursor: pointer;
+}
+
+toggle-switch:not([disabled]):not([checked]):hover {
+  background-color: var(--color-control-backface-hover);
+  box-shadow: 0 0 0 1px var(--color-control-backface-hover);
 }
 
 toggle-switch::after {
-  background-color: var(--primary50);
+  background-color: var(--color-control);
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.07), 0 1px 3px 0 rgba(59, 65, 94, 0.1);
 }
 
-toggle-switch:focus {
-  outline: none;
+toggle-switch[checked] {
+  background-color: var(--color-primary-500);
+  box-shadow: 0 0 0 1px var(--color-primary-500);
 }
 
-toggle-switch:checked {
-  border: solid 3px red;
+toggle-switch[checked]:hover {
+  background-color: var(--color-primary-400);
+  box-shadow: 0 0 0 1px var(--color-primary-400);
+}
+
+toggle-switch[checked]::after {
+  background-color: var(--color-neutral-50);
+}
+
+checkbox-switch {
+  background-color: var(--color-control-backface);
+  box-shadow: 0 0 0 1px var(--color-control-border);
+}
+
+checkbox-switch:not([disabled]) {
+  cursor: pointer;
+}
+
+checkbox-switch:not([disabled]):not([checked]):hover {
+  background-color: var(--color-control-backface-hover);
+  box-shadow: 0 0 0 1px var(--color-control-backface-hover);
+}
+
+checkbox-switch:not([disabled])::before {
+  background: none;
+  background-color: var(--color-primary-500);
+  box-shadow: 0 0 0 1px var(--color-primary-500);
+}
+
+checkbox-switch[checked]:hover::before {
+  background-color: var(--color-primary-400);
+  box-shadow: 0 0 0 1px var(--color-primary-400);
+}
+
+scheme-switch[checked] {
+  background-color: var(--color-control-backface);
+  box-shadow: 0 0 0 1px var(--color-control-border);
+}
+
+scheme-switch[checked]::after {
+  background-color: var(--color-control-backface);
+  box-shadow: 0 0 0 1px var(--color-control-border);
 }
 
 table {
@@ -140,12 +173,12 @@ td {
 
 thead,
 tr:not(:last-child) {
-  border-bottom: solid 1px var(--main-border-color);
+  border-bottom: solid 1px var(--color-neutral-500);
 }
 
 th {
-  color: var(--main-font-color);
-  font-weight: 600;
+  /* color: var(--main-font-color); */
+  font-weight: var(--font-weight-semibold);
 }
 
 th,
@@ -156,20 +189,8 @@ td {
 }
 
 strong {
-  color: var(--complementary-font-color);
-  font-weight: 600;
-}
-
-checkbox-switch {
-  box-shadow: 0 0 0 1px var(--main-border-color);
-}
-
-checkbox-switch:not([disabled])::before {
-  background: linear-gradient(
-    0deg,
-    var(--color-primary-800) 0%,
-    var(--color-primary-700) 100%
-  );
+  /* color: var(--complementary-font-color); */
+  font-weight: var(--font-weight-semibold);
 }
 
 label > checkbox-switch {
@@ -202,23 +223,18 @@ img-thumbnail:not([loaded]) {
   border: 0;
 }
 
-/* scheme-switch {
-  display: block;
-  margin-bottom: 2rem;
-} */
-
 pre {
   display: flex;
   padding: 2rem;
 
-  background: var(--color-primary-600);
+  background: var(--color-neutral-700);
 }
 
 code {
   color: rgb(248, 229, 185);
   font-weight: 400;
   font-size: 13px;
-  font-family: Menlo, Consolas, monospace;
+  font-family: var(--font-family-mono);
 }
 
 code > span {
@@ -233,15 +249,15 @@ details {
 }
 
 summary {
-  color: var(--gray100);
-  font-weight: 600;
-  letter-spacing: 0.01em;
+  color: var(--color-neutral-300);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--tracking-1);
 
   outline: none;
   cursor: pointer;
 
-  -webkit-user-select: none;
-  user-select: none;
+  /* -webkit-user-select: none; */
+  /* user-select: none; */
 }
 
 summary { list-style-type: none; } /* Firefox */
@@ -263,7 +279,9 @@ summary > span::after {
   /* justify-self: end; */
   margin-right: 8px;
 
-  background-color: var(--main-border-color);
+  /* background-color: var(--main-border-color); */
+
+  background-color: var(--color-neutral-400);
 
   content: "";
   clip-path: polygon(
@@ -293,8 +311,7 @@ details[open] summary > span::after {
   height: 100%;
   margin: 0;
 
-  background: white;
-  background: var(--color-background-tint);
+  background: var(--color-background-shade);
   border-radius: unset;
   box-shadow: unset;
   cursor: col-resize;

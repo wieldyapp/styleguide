@@ -1,0 +1,71 @@
+/**
+ * Colors
+ * For rapid visual prototyping
+ */
+
+:root {
+  --color-highlight: hsl(190, 97%, 85%);
+  --color-success: hsl(130, 66%, 32%);
+  --color-error: hsl(0, 66%, 47%);
+  --color-link: hsl(210, 66%, 47%);
+  --color-link-focus: hsl(210, 66%, 52%);
+  --color-background: var(--color-neutral-500);
+  --color-background-shade:var(--color-neutral-600); /* A slightly darker version of the background color */
+  --color-background-tint: var(--color-neutral-400); /* A slightly lighter version of the background color */
+}
+
+ @media(prefers-color-scheme: no-preference), (prefers-color-scheme:dark) {
+  :root {
+
+    --color-primary-50: #ffffff;
+    --color-primary-100: #f4f4f4;
+    --color-primary-200: #D7DAF4;
+    --color-primary-300: #AFB5E9;
+    --color-primary-400: #8890DD;
+    --color-primary-500: #606BD2;
+    --color-primary-600: #3846C7;
+    --color-primary-700: #2D389F;
+    --color-primary-800: #222A77;
+    --color-primary-900: #161C50;
+
+    --color-primary-focus: #03a0bf;
+
+    --color-neutral-50: #f4f4f4;
+    --color-neutral-100: #e9e9e9;
+    --color-neutral-200: #c7c7c8;
+    --color-neutral-300: #a5a6a7;
+    --color-neutral-400: #626365;
+    --color-neutral-500: #1f2023;
+    --color-neutral-600: #1c1d20;
+    --color-neutral-700: #17181a;
+    --color-neutral-800: #131315;
+    --color-neutral-900: #0f1011;
+
+    --color-accent-50: #fef7f7;
+    --color-accent-100: #fdeeee;
+    --color-accent-200: #fad5d5;
+    --color-accent-300: #f7bcbc;
+    --color-accent-400: #f18989;
+    --color-accent-500: #eb5757;
+    --color-accent-600: #d44e4e;
+    --color-accent-700: #b04141;
+    --color-accent-800: #8d3434;
+    --color-accent-900: #732b2b;
+
+  }
+}
+
+@media(prefers-color-scheme: light) {
+  :root {
+    --color-primary-50: #efffed;
+    --color-primary-100: #cbf4c9;
+    --color-primary-200: #85d996;
+    --color-primary-300: #33c27f;
+    --color-primary-400: #1ea672;
+    --color-primary-500: #09825d;
+    --color-primary-600: #0e6245;
+    --color-primary-700: #0d4b3b;
+    --color-primary-800: #0b3733;
+    --color-primary-900: #d8e5e7;
+  }
+}

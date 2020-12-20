@@ -1,57 +1,88 @@
+@import url("https://rsms.me/inter/inter.css");
+/**
+ * Typography
+ * For a foundation in type
+ */
 :root {
+
+  /**
+    * Fonts
+    * Applied as font-family
+    */
+  /* --font-family-standard: -apple-system, system-ui, "Segoe UI", roboto, "Helvetica Neue", helvetica, arial, sans-serif; */
+  --font-family-standard: "Inter", sans-serif;
+  --font-family-mono: Consolas, Menlo, Monaco, "Liberation Mono", monospace;
+
   /**
    * Modular scale
    * Applied as font-size
    */
-   --scale-000: 0.75rem; /* 12px */
-   --scale-00: 0.875rem; /* 14px */
-   --scale-0: 1rem; /* 16px */
-   --scale-1: 1.125rem; /* 18px */
-   --scale-2: 1.25rem; /* 20px */
-   --scale-3: 1.5rem; /* 24px */
-   --scale-4: 1.875rem; /* 30px */
-   --scale-5: 2.25rem; /* 36px */
-   --scale-6: 3rem; /* 48px */
-   --scale-7: 4rem; /* 64px */
-   --scale-8: 4.5rem; /* 72px */
-   --scale-9: 6rem; /* 96px */
-   --scale-10: 9rem; /* 144px */
+  --scale-000: 0.6875rem; /* 11px */
+  --scale-00: 0.75rem; /* 12px */
+  --scale-0: 0.8125rem; /* 13px */
+  --scale-1: 1rem; /* 16px */
+  --scale-2: 1.25rem; /* 20px */
+  --scale-3: 1.5rem; /* 24px */
+  --scale-4: 1.875rem; /* 30px */
+  --scale-5: 2.25rem; /* 36px */
+  --scale-6: 3rem; /* 48px */
+  --scale-7: 4rem; /* 64px */
+  --scale-8: 4.5rem; /* 72px */
+  --scale-9: 6rem; /* 96px */
+  --scale-10: 9rem; /* 144px */
+
+  /**
+   * Weights
+   * Applied as font-weight
+   */
+   --font-weight-light: 300;
+   --font-weight-regular: 400;
+   --font-weight-medium: 500;
+   --font-weight-semibold: 600;
+   --font-weight-bold: 700;
+   --font-weight-black: 900;
 
   /**
    * Leading
    * Applied as line-height
    */
-   --leading-none: 1;
-   --leading-xsmall: 1.125;
-   --leading-small: 1.275;
-   --leading-normal: 1.5;
-   --leading-large: 1.625;
-   --leading-xlarge: 2;
+  --leading-none: 1;
+  --leading-xsmall: 1.125;
+  --leading-small: 1.275;
+  --leading-normal: 1.5;
+  --leading-large: 1.625;
+  --leading-xlarge: 2;
 
   /**
    * Tracking
    * Applied as letter-spacing
    */
-   --tracking-000: -0.05em;
-   --tracking-00: -0.025em;
-   --tracking-0: 0;
-   --tracking-1: 0.025em;
-   --tracking-2: 0.05em;
-   --tracking-3: 0.1em;
-   --tracking-4: 0.25em;
-   --tracking-5: 0.25em;
+  --tracking-000: -0.05em;
+  --tracking-00: -0.025em;
+  --tracking-0: 0;
+  --tracking-1: 0.025em;
+  --tracking-2: 0.05em;
+  --tracking-3: 0.1em;
+  --tracking-4: 0.25em;
+  --tracking-5: 0.25em;
 
   /**
    * Measures
    * Applied as max-width
    * Results in ~45/~66/~80 character measures
    */
-   --measure-narrow: 45ch;
-   --measure-normal: 66ch;
-   --measure-wide: 80ch;
+  --measure-narrow: 45ch;
+  --measure-normal: 66ch;
+  --measure-wide: 80ch;
 }
 
-h1,
+@supports (font-variation-settings: normal) {
+  :root {
+    --font-family-standard: "Inter var", sans-serif;
+  }
+}
+
+/* h1,
 h2,
 h3,
 h4,
@@ -83,7 +114,7 @@ h6 {
 
 .plus {
   font-weight: 600;
-}
+} */
 
 p,
 li {
@@ -91,7 +122,7 @@ li {
 }
 
 a:any-link {
-  color: var(--gray500);
-  font-weight: 400;
+  color: var(--color-neutral-100);
+  font-weight: var(--font-weight-regular);
   text-decoration: none;
 }

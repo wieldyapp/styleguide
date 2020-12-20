@@ -1,69 +1,57 @@
 /**
- * Layout
- * For structural consistency across space
+ * UI library
+ * For consistency across UI and motion
  */
  :root {
   /**
-   * Size scale
-   * Applied to sizing property
-   * Eg: margin, padding, height
+   * Elevation
+   * Applied as box-shadow
+   * Inspired by Material Design https://material.io/design/environment/elevation.html
    */
-  --spacing-000: 8px;
-  --spacing-00: 12px;
-  --spacing-0: 16px;
-  --spacing-1: 20px;
-  --spacing-2: 32px;
-  --spacing-3: 48px;
-  --spacing-4: 64px;
-  --spacing-5: 96px;
-  --spacing-6: 128px;
-  --spacing-7: 160px;
-  --spacing-8: 192px;
-  --spacing-9: 224px;
-  --spacing-10: 256px;
-  --spacing-11: 512px;
-  --spacing-12: 768px;
+  --elevation-1: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+    0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  --elevation-2: 0 3px 4px 0 rgba(0, 0, 0, 0.14),
+    0 3px 3px -2px rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.12);
+  --elevation-3: 0 4px 5px 0 rgba(0, 0, 0, 0.14),
+    0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  --elevation-4: 0 6px 10px 0 rgba(0, 0, 0, 0.14),
+    0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
+  --elevation-5: 0 8px 10px 1px rgba(0, 0, 0, 0.14),
+    0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2);
+  --elevation-6: 0 16px 24px 2px rgba(0, 0, 0, 0.14),
+    0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
 
   /**
-   * Widths
-   * Applied as max-width
+   * Motion easing curves
+   * Applied in transitions and animations
+   * Inspired by Material Design https://material.io/design/motion/speed.html#easing
    */
-  --width-1: 320px;
-  --width-2: 396px;
-  --width-3: 448px;
-  --width-4: 512px;
-  --width-5: 576px;
-  --width-6: 672px;
-  --width-7: 768px;
-  --width-8: 896px;
-  --width-9: 1024px;
-  --width-10: 1152px;
-  --width-11: 1280px;
-  --width-12: 1440px;
+  --easing-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --easing-accelerate: cubic-bezier(0.4, 0, 1, 1);
+  --easing-decelerate: cubic-bezier(0, 0, 0.2, 1);
 
   /**
-   * Grid gaps
-   * Applied as padding (flex grid) or grid-gap (CSS Grid)
+   * Radiuses
+   * Applied as border-radius
+   * Relative to font size of content
    */
-  --gap-00: 12px;
-  --gap-0: 16px;
-  --gap-1: 24px;
-  --gap-2: 36px;
-  --gap-3: 48px;
-  --gap-4: 64px;
-  --gap-5: 96px;
-  --gap-6: 128px;
+  --radius-1: 0.2em;
+  --radius-2: 0.375em;
+  --radius-3: 0.5em;
+  --radius-4: 0.8em;
+  --radius-5: 1em;
+  --radius-6: 1.25em;
+  --radius-round: 9999px;
 
   /**
-   * Grid gap offsets
-   * Applied as negative margin in flex grids
+   * Layers
+   * Applied as z-index
    */
-  --gap-offset-00: calc(0px - var(--gap-00));
-  --gap-offset-0: calc(0px - var(--gap-0));
-  --gap-offset-1: calc(0px - var(--gap-1));
-  --gap-offset-2: calc(0px - var(--gap-2));
-  --gap-offset-3: calc(0px - var(--gap-3));
-  --gap-offset-4: calc(0px - var(--gap-4));
-  --gap-offset-5: calc(0px - var(--gap-5));
-  --gap-offset-6: calc(0px - var(--gap-6));
+  --layer-1: 10;
+  --layer-2: 20;
+  --layer-3: 30;
+  --layer-4: 40;
+  --layer-5: 50;
+  --layer-6: 60;
+  --layer-top: 2147483647;
 }

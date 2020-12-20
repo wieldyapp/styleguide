@@ -10,6 +10,8 @@ nav header {
 
   align-items: center;
 
+  padding: 0;
+
   background-color: var(--color-background);
   border: none;
 }
@@ -33,7 +35,11 @@ nav ul {
 }
 
 @media (max-width: 1023px) {
+  nav {
+    border: 0;
+    box-shadow: var(--elevation-1);
+  }
   nav header {
-    padding-top: 30px;
+    padding-top: 33px;
   }
 }

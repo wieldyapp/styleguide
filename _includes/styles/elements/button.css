@@ -13,9 +13,11 @@ header button {
   height: 28px;
   padding: 0px;
 
-  color: var(--color-primary-50);
+  color: var(--color-control-backface);
 
   border-radius: 4px;
+
+  outline: none;
 
   cursor: pointer;
 
@@ -44,7 +46,6 @@ header button:first-of-type {
 
   header {
     justify-content: space-between;
-    /* padding: 0; */
   }
 
   header button:first-of-type {
@@ -52,7 +53,7 @@ header button:first-of-type {
 
     display: inline-flex;
     margin-right: 16px;
-    margin-left: 10px;
+    margin-left: calc((0 - max(16px, env(safe-area-inset-left))));
   }
 
   nav {
@@ -63,18 +64,15 @@ header button:first-of-type {
 
     z-index: 90;
 
-    box-sizing: content-box;
+    box-sizing: border-box;
 
     width: 220px;
     min-width: 190px;
     max-width: 50vw;
 
-
-    /* padding: 0 16px 19px 16px; */
-
     box-shadow: none;
 
-    transform: translateX(-252px);
+    transform: translateX(calc(-252px - env(safe-area-inset-left)));
 
     transition: transform 250ms;
 
@@ -87,7 +85,7 @@ header button:first-of-type {
   }
 
   nav[data-open] {
-    box-shadow: var(--elevation);
+    box-shadow: var(--elevation-2);
     transform: translateX(0);
   }
 }
