@@ -19,6 +19,13 @@
 </head>
 
 <body>
+  <button type="button" aria-label="Toggle navigation">
+    <svg width="16" height="16" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M3.08797 9.04559H16.588" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+      <path d="M3.08797 4.54559H16.588" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+      <path d="M3.08797 13.5456H16.588" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg>
+  </button>
   {% include header.liquid %}
   {% include nav.liquid %}
   {{ content }}
@@ -27,5 +34,62 @@
 <script async type=module src=//static.brickpile.app/main.js?v=3></script>
 <script async type=module src=/scripts.js></script>
 <script async type=module src="//cdn.jsdelivr.net/gh/wieldyapp/styleguide@main/index.esm.js"></script>
+<script>
+
+  const images = [...document.querySelectorAll("img-thumbnail")];
+
+  [...document.querySelectorAll("select,input[type=range], toggle-switch[data-feature]")].map(el => {
+    el.addEventListener("change", e => {
+      if (el.nodeName == 'TOGGLE-SWITCH') {
+        if (e.target.checked) {
+          images.map(image => {
+            image.setAttribute(e.target.dataset.feature, e.target.checked);
+          });
+        } else {
+          images.map(image => {
+            image.removeAttribute(e.target.dataset.feature);
+          });
+        }
+      } else {
+        if (e.target.value) {
+          images.map(image => {
+            image.setAttribute(e.target.dataset.feature, e.target.value);
+          });
+        } else {
+          images.map(image => {
+            image.removeAttribute(e.target.dataset.feature);
+          });
+        }
+      }
+    });
+  });
+
+  images.forEach((image, index) => {
+    const menu = image.nextElementSibling;
+    if(menu) {
+      const button = menu.querySelector('button');
+      button.addEventListener('click', async e => {
+        try {
+          console.log(image.getAttribute('src') + ',e-grayscale');
+          const imgURL = image.getAttribute('src') + ',e-grayscale,fo-auto,ar-4-3';
+          const data = await fetch(imgURL);
+          const blob = await data.blob();
+          await navigator.clipboard.write([
+            new ClipboardItem({
+              [blob.type]: blob
+            })
+          ]);
+          console.log('Image copied.');
+        } catch (err) {
+          console.error(err.name, err.message);
+        }
+      });
+    }
+  });
+
+
+
+</script>
+
 
 </html>
