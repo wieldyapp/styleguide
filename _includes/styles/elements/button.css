@@ -1,4 +1,4 @@
-body > button {
+header button {
   position: fixed;
   top: 14px;
   left: max(6px, calc(var(--sal) - 8px));
@@ -22,11 +22,9 @@ body > button {
   outline: none;
 
   cursor: pointer;
-
-  transition: all 0.2s ease 0s;
 }
 
-body > button:first-of-type {
+header button:first-of-type {
   display: none;
 
   background-color: transparent;
@@ -47,14 +45,11 @@ body > button:first-of-type {
   }
 
   header {
-    position: fixed;
-    top: 0;
-
     justify-content: space-between;
     width: 100%;
   }
 
-  body > button:first-of-type {
+  header button:first-of-type {
     display: inline-flex;
   }
 
@@ -65,9 +60,11 @@ body > button:first-of-type {
 
     box-sizing: border-box;
 
-    width: 220px;
+    width: clamp(190px, 220px, 50vw);
+
+    /* width: 220px;
     min-width: 190px;
-    max-width: 50vw;
+    max-width: 50vw; */
 
     height: 100vh;
 

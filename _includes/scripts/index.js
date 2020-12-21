@@ -299,7 +299,7 @@ document.onmouseup = () => {
 
 
 //identify the toggle switch HTML element
-const toggleSwitch = document.querySelector('scheme-switch');
+// const toggleSwitch = document.querySelector('scheme-switch');
 
 //function that changes the theme, and sets a localStorage variable to track the theme between page loads
 function switchTheme(e) {
@@ -315,7 +315,7 @@ function switchTheme(e) {
 }
 
 //listener for changing themes
-toggleSwitch.addEventListener('change', switchTheme, false);
+// toggleSwitch.addEventListener('change', switchTheme, false);
 
 //pre-check the dark-theme checkbox if dark-theme is set
 if (document.documentElement.getAttribute("data-theme") == "dark") {
@@ -331,6 +331,6 @@ if (window.matchMedia('(prefers-color-scheme)').media !== 'not all') {
   console.log('🎉 Dark mode is supported');
 }
 
-document.querySelector('body > button:first-of-type').addEventListener('click', () => {
+document.querySelector('header button:first-of-type').addEventListener('click', () => {
   document.querySelector('nav').toggleAttribute('data-open');
 });
