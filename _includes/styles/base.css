@@ -64,6 +64,8 @@ nav {
   position: relative;
 
   grid-area: nav;
+
+  max-height: 100vh;
   padding: 0 16px 19px max(16px,env(safe-area-inset-left));
   overflow-y: auto;
 
