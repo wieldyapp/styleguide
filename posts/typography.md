@@ -6,35 +6,35 @@ layout: base.liquid
 
 <main>
   <div style="max-width:var(--width-6); margin: 0 auto;">
-    <div class=flex>
-      <div>
+    <div style="display:flex">
+      <div style="flex: 1">
         <h1>Heaing 1</h1>
       </div>
-      <div>
+      <div style="flex: 1">
         <h1 class="plus">Heaing 1+</h1>
       </div>
     </div>
-    <div class=flex>
-      <div>
+    <div style="display:flex">
+      <div style="flex: 1">
         <h2>Heaing 2</h2>
       </div>
-      <div>
+      <div style="flex: 1">
         <h2 class="plus">Heaing 2+</h2>
       </div>
     </div>
-    <div class=flex>
-      <div>
+    <div style="display:flex">
+      <div style="flex: 1">
         <h3>Heaing 3</h3>
       </div>
-      <div>
+      <div style="flex: 1">
         <h3 class="plus">Heaing 3+</h3>
       </div>
     </div>
-    <div class=flex>
-      <div>
+    <div style="display:flex">
+      <div style="flex: 1">
         <h4>Heaing 4</h4>
       </div>
-      <div>
+      <div style="flex: 1">
         <h4 class="plus">Heaing 4+</h4>
       </div>
     </div>

@@ -140,7 +140,7 @@ toggle-switch[checked]::after {
 
 checkbox-switch {
   background-color: var(--color-control-backface);
-  box-shadow: 0 0 0 1px var(--color-control-border);
+  box-shadow: none;
 }
 
 checkbox-switch:not([disabled]) {
@@ -149,18 +149,16 @@ checkbox-switch:not([disabled]) {
 
 checkbox-switch:not([disabled]):not([checked]):hover {
   background-color: var(--color-control-backface-hover);
-  box-shadow: 0 0 0 1px var(--color-control-backface-hover);
 }
 
 checkbox-switch:not([disabled])::before {
   background: none;
   background-color: var(--color-primary-500);
-  box-shadow: 0 0 0 1px var(--color-primary-500);
 }
 
-checkbox-switch[checked]:hover::before {
+checkbox-switch[checked]:not([disabled]):hover::before,
+checkbox-switch[checked]:not([disabled]):focus::before {
   background-color: var(--color-primary-400);
-  box-shadow: 0 0 0 1px var(--color-primary-400);
 }
 
 scheme-switch[checked] {
@@ -316,13 +314,15 @@ details[open] summary > span::after {
   height: 100%;
   margin: 0;
 
-  background: var(--color-background-shade);
+  background: var(--color-primary-500);
   border-radius: unset;
   box-shadow: unset;
   cursor: col-resize;
   opacity: 0;
 
-  transition: opacity 150ms ease-in-out 0s;
+  transition: opacity 75ms var(--easing-accelerate);
+
+  will-change: opacity;
 }
 
 #dragbar:hover,

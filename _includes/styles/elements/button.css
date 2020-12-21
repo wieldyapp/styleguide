@@ -75,7 +75,7 @@ body > button:first-of-type {
 
     transform: translateX(calc(-252px - env(safe-area-inset-left)));
 
-    transition: transform 250ms;
+    transition: transform 250ms var(--easing-decelerate);
 
     will-change: transform;
   }
@@ -83,7 +83,6 @@ body > button:first-of-type {
   main {
     box-sizing: border-box;
     width: 100vw;
-
   }
 
   nav[data-open] {
