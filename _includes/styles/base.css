@@ -2,7 +2,7 @@ html {
   width: 100%;
   height: -webkit-fill-available;
 
-  overflow-y: hidden;
+  overflow: hidden;
 
   font-size: var(--scale-0);
 
@@ -33,8 +33,6 @@ body {
   min-height: -webkit-fill-available;
 
   margin: 0;
-
-  overflow-y: hidden;
 
   color: var(--color-neutral-50);
 
@@ -96,7 +94,7 @@ main {
   grid-area: content;
   box-sizing: border-box;
 
-  max-height: calc(100vh - 56px); /* add variable for header height */
+  max-height: calc(100vh - 56px); /* add variable for header height ... not working propeery ... maybe scrool padding will fix */
   padding: 36px 23px 36px 13px;
   padding-right: max(16px,env(safe-area-inset-right));
   padding-bottom: max(16px,env(safe-area-inset-bottom));
