@@ -54,7 +54,7 @@ header button {
 
     height: 100vh;
 
-    transform: translateX(calc(-252px - env(safe-area-inset-left)));
+    transform: translateX(calc(-218px - env(safe-area-inset-left)));
 
     transition: transform 250ms var(--easing-decelerate);
 

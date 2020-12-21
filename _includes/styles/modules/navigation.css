@@ -37,7 +37,6 @@ nav ul {
 
 @media (max-width: 1023px) {
   nav {
-    border: 0;
     box-shadow: var(--elevation-1);
   }
   nav header {
