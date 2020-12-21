@@ -65,8 +65,8 @@ nav {
 
   grid-area: nav;
 
-  max-height: 100vh;
-  padding: 0 16px 19px max(16px,env(safe-area-inset-left));
+  height: 100vh;
+  padding: 0 16px max(16px,env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left));
   overflow-y: auto;
 
   background-color: var(--color-background);
@@ -96,7 +96,7 @@ main {
   grid-area: content;
   box-sizing: border-box;
 
-  max-height: calc(100vh - 56px); /* add variable for header height ... not working propeery ... maybe scrool padding will fix */
+  height: calc(100vh - 56px); /* add variable for header height ... not working propeery ... maybe scrool padding will fix */
   padding: 36px 23px 36px 13px;
   padding-right: max(16px,env(safe-area-inset-right));
   padding-bottom: max(16px,env(safe-area-inset-bottom));
