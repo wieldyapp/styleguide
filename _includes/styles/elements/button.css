@@ -1,11 +1,11 @@
 header button {
-  position: fixed;
-  top: 14px;
+  position: relative;
   left: max(6px, calc(var(--sal) - 8px));
+  left: -8px;
 
   z-index: var(--layer-2);
 
-  display: inline-flex;
+  display: none;
 
   align-items: center;
 
@@ -17,20 +17,15 @@ header button {
 
   color: var(--color-control-backface);
 
+  background-color: transparent;
+  border: none;
+
   border-radius: var(--radius-1);
 
   outline: none;
-
-  cursor: pointer;
-}
-
-header button:first-of-type {
-  display: none;
-
-  background-color: transparent;
-  border: none;
   box-shadow: none;
 
+  cursor: pointer;
 }
 
 @media (max-width: 1023px) {
@@ -41,12 +36,7 @@ header button:first-of-type {
     grid-template-rows: 56px 1fr;
     grid-template-columns: 1fr;
 
-    contain: initial;
-  }
-
-  header {
-    justify-content: space-between;
-    width: 100%;
+    /* contain: initial; */
   }
 
   header button:first-of-type {
@@ -62,24 +52,13 @@ header button:first-of-type {
 
     width: clamp(190px, 220px, 50vw);
 
-    /* width: 220px;
-    min-width: 190px;
-    max-width: 50vw; */
-
     height: 100vh;
-
-    box-shadow: none;
 
     transform: translateX(calc(-252px - env(safe-area-inset-left)));
 
     transition: transform 250ms var(--easing-decelerate);
 
     will-change: transform;
-  }
-
-  main {
-    box-sizing: border-box;
-    width: 100vw;
   }
 
   nav[data-open] {
