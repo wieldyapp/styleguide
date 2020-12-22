@@ -10,8 +10,8 @@
     * Applied as font-family
     */
   /* --font-family-standard: -apple-system, system-ui, "Segoe UI", roboto, "Helvetica Neue", helvetica, arial, sans-serif; */
-  --font-family-standard: "Inter", sans-serif;
-  --font-family-mono: Consolas, Menlo, Monaco, "Liberation Mono", monospace;
+  --font-family-standard: -apple-system, system-ui, "Inter", sans-serif;
+  --font-family-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
 
   /**
    * Modular scale
@@ -78,7 +78,7 @@
 
 @supports (font-variation-settings: normal) {
   :root {
-    --font-family-standard: "Inter var", sans-serif;
+    --font-family-standard: -apple-system, system-ui, "Inter var", sans-serif;
   }
 }
 
