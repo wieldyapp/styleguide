@@ -114,6 +114,10 @@ main {
   }
 }
 
+@supports not (-webkit-touch-callout: none) {
+  /* CSS for other than iOS devices */
+}
+
 
 toggle-switch {
   background-color: var(--color-control-backface);
@@ -324,7 +328,7 @@ details[open] summary > span::after {
   height: 100%;
   margin: 0;
 
-  background: var(--color-primary-500);
+  background: var(--color-background-tint);
   border-radius: unset;
   box-shadow: unset;
 
