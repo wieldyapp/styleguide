@@ -269,9 +269,20 @@ target.onmousedown = (e) => {
   document.body.classList.add("resizing");
 };
 
+target.addEventListener('touchend', (e) => {
+  e.preventDefault();
+  dragging = 1;
+  root.addEventListener("touchmove", resize);
+  document.body.classList.add("resizing");
+});
+
 document.onmouseup = () => {
   dragging ? clearJSEvents() : "";
 };
+
+document.addEventListener('touchend', (e) => {
+  dragging ? clearJSEvents() : "";
+})
 
 // const onDrag = callback => {
 //   const listen = action =>
