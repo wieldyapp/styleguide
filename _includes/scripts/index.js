@@ -342,6 +342,7 @@ if (window.matchMedia('(prefers-color-scheme)').media !== 'not all') {
   console.log('🎉 Dark mode is supported');
 }
 
+/* Toggle nav bar */
 document.querySelector('header button:first-of-type').addEventListener('click', () => {
   document.querySelector('nav').toggleAttribute('data-open');
 });
