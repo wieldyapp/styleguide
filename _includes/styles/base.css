@@ -96,7 +96,8 @@ main {
   grid-area: content;
   box-sizing: border-box;
 
-  height: calc(100vh - 56px); /* add variable for header height ... not working propeery ... maybe scrool padding will fix */
+  height: calc(100vh - 56px); /* add variable for header height */
+
   padding: 36px 23px 36px 13px;
   padding-right: max(16px,env(safe-area-inset-right));
   padding-bottom: max(16px,env(safe-area-inset-bottom));
@@ -104,6 +105,15 @@ main {
   overflow-y: auto;
 
 }
+
+@supports (-webkit-touch-callout: none) {
+  /* CSS specific to iOS devices */
+  main {
+    /* mobile viewport bug fix */
+    max-height: -webkit-fill-available;
+  }
+}
+
 
 toggle-switch {
   background-color: var(--color-control-backface);
@@ -317,7 +327,7 @@ details[open] summary > span::after {
   background: var(--color-primary-500);
   border-radius: unset;
   box-shadow: unset;
-  cursor: col-resize;
+
   opacity: 0;
 
   transition: opacity 75ms var(--easing-accelerate);
@@ -327,5 +337,6 @@ details[open] summary > span::after {
 
 #dragbar:hover,
 body.resizing #dragbar {
+  cursor: col-resize;
   opacity: 1;
 }
