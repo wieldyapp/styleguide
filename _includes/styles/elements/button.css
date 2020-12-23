@@ -1,4 +1,4 @@
-header button {
+header button:first-of-type {
   position: relative;
   left: max(6px, calc(var(--sal) - 8px));
   left: -8px;
@@ -65,4 +65,36 @@ header button {
     box-shadow: var(--elevation-2);
     transform: translateX(0);
   }
+}
+
+/* Fix */
+
+header button:last-of-type {
+  position: relative;
+  /* left: max(6px, calc(var(--sal) - 8px)); */
+  /* left: -8px; */
+
+  z-index: var(--layer-3);
+
+  /* display: none; */
+
+  align-items: center;
+
+  justify-content: center;
+
+  min-width: 28px;
+  height: 28px;
+  padding: 0px;
+
+  color: var(--color-control-backface);
+
+  background-color: transparent;
+  border: none;
+
+  border-radius: var(--radius-1);
+
+  outline: none;
+  box-shadow: none;
+
+  cursor: pointer;
 }

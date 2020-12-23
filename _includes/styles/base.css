@@ -46,6 +46,8 @@ header {
 
   align-items: center;
 
+  justify-content:space-between;
+
   box-sizing: content-box;
 
   height: 56px;
@@ -118,6 +120,48 @@ main {
   /* CSS for other than iOS devices */
 }
 
+
+aside {
+
+  position: absolute;
+
+  top: 57px; /* css variable for header height */
+
+  right: 0;
+
+  bottom: 0;
+
+  width: clamp(190px, 424px, 100vw);
+
+  background-color: var(--color-background);
+  border-left: 1px solid var(--main-border-color);
+  transform: translateX(424px);
+
+  transition: transform 250ms var(--easing-decelerate);
+
+  will-change: transform;
+}
+
+
+aside[data-open] {
+  box-shadow: var(--elevation-2);
+  transform: translateX(0);
+}
+
+@media (max-width: 1023px) {
+  aside {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      z-index: var(--layer-2);
+
+      width: 100vw;
+
+      border-left: none;
+      transform: translateX(100vw);
+  }
+}
 
 toggle-switch {
   background-color: var(--color-control-backface);

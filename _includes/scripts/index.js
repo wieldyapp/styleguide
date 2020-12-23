@@ -345,3 +345,8 @@ if (window.matchMedia('(prefers-color-scheme)').media !== 'not all') {
 document.querySelector('header button:first-of-type').addEventListener('click', () => {
   document.querySelector('nav').toggleAttribute('data-open');
 });
+
+/* Toggle side bar */
+document.querySelector('header button:last-of-type').addEventListener('click', () => {
+  document.querySelector('aside').toggleAttribute('data-open');
+});
