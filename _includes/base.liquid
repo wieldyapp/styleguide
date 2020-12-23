@@ -13,7 +13,6 @@
   -->
   <meta name="color-scheme" content="dark light">
   <meta name="theme-color" content="#1f2023">
-
   <script>
     const leftWidth = localStorage.getItem('--base-nav-ideal-width')
       ?? getComputedStyle(document.documentElement).getPropertyValue('--base-nav-ideal-width');
@@ -25,6 +24,7 @@
   {% include header.liquid %}
   {% include nav.liquid %}
   {{ content }}
+  {% include aside.liquid %}
 </body>
 
 <script async type=module src=//static.brickpile.app/main.js?v=3></script>
