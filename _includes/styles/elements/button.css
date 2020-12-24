@@ -5,8 +5,6 @@ header button:first-of-type {
 
   z-index: var(--layer-2);
 
-  display: none;
-
   align-items: center;
 
   justify-content: center;
@@ -25,6 +23,10 @@ header button:first-of-type {
   outline: none;
   box-shadow: none;
 
+  /* display: none; */
+
+  visibility: hidden;
+
   cursor: pointer;
 }
 
@@ -41,6 +43,8 @@ header button:first-of-type {
 
   header button:first-of-type {
     display: inline-flex;
+
+    visibility: visible;
   }
 
   nav {
@@ -91,10 +95,25 @@ header button:last-of-type {
   background-color: transparent;
   border: none;
 
-  border-radius: var(--radius-1);
+  border-radius: var(--radius-2);
 
   outline: none;
   box-shadow: none;
 
   cursor: pointer;
+}
+
+header button {
+  transition: background 250ms var(--easing-decelerate);
+
+  will-change: background;
+}
+
+header button:hover {
+
+  color: #8A8F98;
+
+  background: #27282B;
+
+  stroke: 2;
 }
