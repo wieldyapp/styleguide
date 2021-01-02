@@ -1,0 +1,7 @@
+aside ul {
+  padding:0;
+}
+
+aside > div {
+  /* padding: 0 16px max(16px,env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left)); */
+}

@@ -47,3 +47,5 @@ layout: base.liquid
     </div>
   </div>
 </main>
+
+{% include aside.liquid %}

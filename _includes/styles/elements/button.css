@@ -3,7 +3,7 @@ header button:first-of-type {
   left: max(6px, calc(var(--sal) - 8px));
   left: -8px;
 
-  z-index: var(--layer-2);
+  z-index: var(--layer-3);
 
   align-items: center;
 
@@ -50,7 +50,7 @@ header button:first-of-type {
   nav {
     position: fixed;
 
-    z-index: var(--layer-1);
+    z-index: var(--layer-2);
 
     box-sizing: border-box;
 

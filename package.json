@@ -9,7 +9,7 @@
   "module": "dist/index.esm.js",
   "unpkg": "dist/index.esm.js",
   "scripts": {
-    "start" : "npx eleventy --serve"
+    "start" : "npx eleventy --serve --port 8081"
   },
   "repository": {
     "type": "git",

@@ -21,12 +21,13 @@ ul {
 body {
   display: grid;
   grid-template-areas:
-    "nav header"
-    "nav content";
-  grid-template-rows: 59px 1fr;
+    "nav header header"
+    "nav content aside";
+  grid-template-rows: 56px 1fr;
   grid-template-columns:
     clamp(var(--ideal-nav))
-    1fr;
+    1fr
+    auto;
 
   min-height: 100vh;
   /* mobile viewport bug fix */
@@ -68,30 +69,14 @@ nav {
   grid-area: nav;
 
   height: 100vh;
-  padding: 0 16px max(16px,env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left));
+  padding: 0 16px max(16px, env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
+
+  overflow: visible;
   overflow-y: auto;
 
   background-color: var(--color-background);
   border-right: solid 1px var(--main-border-color);
 
-}
-
-/* main > div {
-  display: block;
-  box-sizing: border-box;
-  -- min-width: 20%; --
-  overflow: hidden; -- stop background bleeding --
-
-  background-color: var(--color-background-tint);
-  background-clip: padding-box;
-  border-radius: 4px;
-  box-shadow: var(--shadow--keyline);
-} */
-
-nav div {
-  display: flex;
-  justify-content: space-between;
-  margin-left: var(--spacing-000);
 }
 
 main {
@@ -100,7 +85,7 @@ main {
 
   height: calc(100vh - 56px); /* add variable for header height */
 
-  padding: 36px 23px 36px 13px;
+  padding-top: 36px;
   padding-right: max(16px,env(safe-area-inset-right));
   padding-bottom: max(16px,env(safe-area-inset-bottom));
   padding-left: max(16px,env(safe-area-inset-left));
@@ -110,7 +95,7 @@ main {
 
 @supports (-webkit-touch-callout: none) {
   /* CSS specific to iOS devices */
-  main {
+  nav, main {
     /* mobile viewport bug fix */
     max-height: -webkit-fill-available;
   }
@@ -120,46 +105,69 @@ main {
   /* CSS for other than iOS devices */
 }
 
-
 aside {
 
-  position: absolute;
+  grid-area: aside;
 
-  top: 57px; /* css variable for header height */
+  box-sizing: border-box;
 
-  right: 0;
+  width: clamp(190px, 424px, 50vw);
 
-  bottom: 0;
+  height: calc(100% - 56px); /* add variable for header height */
 
-  width: clamp(190px, 424px, 100vw);
+  padding-top: 36px;
+  padding-right: max(16px,env(safe-area-inset-right));
+  padding-bottom: max(16px,env(safe-area-inset-bottom));
+  padding-left: max(16px,env(safe-area-inset-left));
+
+  overflow-y: auto;
 
   background-color: var(--color-background);
   border-left: 1px solid var(--main-border-color);
-  transform: translateX(424px);
 
-  transition: transform 250ms var(--easing-decelerate);
+  box-shadow: var(--elevation-2);
 
-  will-change: transform;
+  transition: width 250ms var(--easing-decelerate);
 }
 
-
-aside[data-open] {
-  box-shadow: var(--elevation-2);
-  transform: translateX(0);
+aside:not([data-open]) {
+  width: 0;
 }
 
 @media (max-width: 1023px) {
+
   aside {
-      position: fixed;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      z-index: var(--layer-2);
 
-      width: 100vw;
+    position: fixed;
 
-      border-left: none;
-      transform: translateX(100vw);
+    top: 57px;
+
+    right: 0;
+
+    z-index: var(--layer-1);
+
+    width: 100vw;
+
+    transform: translateX(100vw);
+
+    transition: transform 250ms var(--easing-decelerate);
+
+  }
+
+  aside[data-open] {
+
+    z-index: var(--layer-1);
+
+    overflow-y: auto;
+
+    border-left: none;
+    box-shadow: var(--elevation-2);
+    box-shadow: none;
+    transform: translateX(0);
+
+  }
+  aside:not([data-open]) {
+    width: 100vw;
   }
 }
 
@@ -367,7 +375,7 @@ details[open] summary > span::after {
   top: 0;
   right: 0;
 
-  width: 6px;
+  width: 4px;
   min-width: unset;
   height: 100%;
   margin: 0;
