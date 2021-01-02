@@ -113,16 +113,12 @@ aside {
 
   width: clamp(190px, 424px, 50vw);
 
-  height: calc(100% - 56px); /* add variable for header height */
-
-  padding-top: 36px;
-  padding-right: max(16px,env(safe-area-inset-right));
-  padding-bottom: max(16px,env(safe-area-inset-bottom));
-  padding-left: max(16px,env(safe-area-inset-left));
+  height: calc(100vh - 56px); /* add variable for header height */
 
   overflow-y: auto;
 
   background-color: var(--color-background);
+  border-top: 1px solid var(--main-border-color);
   border-left: 1px solid var(--main-border-color);
 
   box-shadow: var(--elevation-2);
@@ -147,6 +143,10 @@ aside:not([data-open]) {
     z-index: var(--layer-1);
 
     width: 100vw;
+
+    height: calc(100% - 56px);
+
+    border-top: none;
 
     transform: translateX(100vw);
 
