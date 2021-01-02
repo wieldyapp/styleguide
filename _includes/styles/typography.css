@@ -123,6 +123,6 @@ li {
 a:any-link {
   color: var(--color-neutral-100);
   font-weight: var(--font-weight-regular);
-  font-size: var(--scale-1);
+  font-size: var(--scale-0);
   text-decoration: none;
 }

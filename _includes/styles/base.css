@@ -75,8 +75,8 @@ nav {
   overflow-y: auto;
 
   background-color: var(--color-background);
-  border-right: solid 1px var(--main-border-color);
 
+  border-right: solid 1px var(--main-border-color);
 }
 
 main {
