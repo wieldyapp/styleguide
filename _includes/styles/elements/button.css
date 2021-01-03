@@ -61,8 +61,6 @@ header button:first-of-type {
     transform: translateX(calc(-218px - env(safe-area-inset-left)));
 
     transition: transform 250ms var(--easing-decelerate);
-
-    will-change: transform;
   }
 
   nav[data-open] {
@@ -115,5 +113,5 @@ header button:hover {
 
   background: #27282B;
 
-  stroke: 2;
+  /* stroke: 2 */
 }

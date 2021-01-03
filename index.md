@@ -3,8 +3,8 @@ layout: base.liquid
 ---
 
 <main>
-  <div style="max-width:var(--width-6); margin: 0 auto;">
-    <h1>Hello, world</h1>
+  <div>
+    <resizable-iframe name="preview" width="414" height="736" zoom="0.75" src="https://consid.se"></resizable-iframe>
   </div>
 </main>
 
