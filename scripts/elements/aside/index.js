@@ -10,22 +10,24 @@ class Aside extends HTMLElement {
     const target = document.getElementById("dragbar2");
     const transition = this.style.transition;
 
-    if(App.preferences.showSidePane) {
-      this.setAttribute('data-open','');
-    }
+    App?.preferences?.showSidePane ? this.setAttribute('data-open', '') : this.removeAttribute('data-open');
 
     const resize = (e) => {
-      this.style.transition = 'none';
       root.style.setProperty("--base-aside-ideal-width", `${window.innerWidth - e.pageX + 4}px`); /** Get bar width from css */
     };
 
-    const persist = () => {
+    const onDragEnd = () => {
       this.style.transition = transition;
       App.preferences = {
         ...App.preferences,
         ...{ sidePaneWidth: getComputedStyle(root).getPropertyValue("--base-aside-ideal-width") }
       }
     };
+
+    const onDragStart = () => {
+      this.style.transition = 'none';
+      // document.querySelector('main').style.pointerEvents = 'none';
+    }
 
     const onDrag = (callback) => {
       const listen = (action) =>
@@ -34,7 +36,7 @@ class Aside extends HTMLElement {
         );
       const end = () => {
         listen("remove");
-        persist();
+        onDragEnd();
       };
       const events = {
         move: callback,
@@ -44,6 +46,7 @@ class Aside extends HTMLElement {
     };
 
     target.addEventListener("mousedown", (e) => {
+      onDragStart();
       const callback = (() => {
         return resize;
       })();

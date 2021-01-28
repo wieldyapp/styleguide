@@ -1,8 +1,3 @@
-class App {
-
-}
-
-
 // customElements.define(
 //   'resize-bar',
 //   class extends HTMLElement {
@@ -347,16 +342,6 @@ if (window.matchMedia('(prefers-color-scheme)').media !== 'not all') {
   console.log('🎉 Dark mode is supported');
 }
 
-/* Toggle nav bar */
-document.querySelector('header button:first-of-type').addEventListener('click', () => {
-  document.querySelector('nav').toggleAttribute('data-open');
-});
-
-/* Toggle side bar */
-document.querySelector("button[aria-controls=sidebar]").addEventListener('click', (e) => {
-  document.querySelector('aside').toggleAttribute('data-open');
-});
-
 customElements.define('image-list', class extends HTMLElement {
   constructor() {
     super();
@@ -384,17 +369,4 @@ customElements.define('image-list', class extends HTMLElement {
         console.error('Error:', error);
       });
   }
-});
-
-const imageList = document.querySelector('image-list');
-/* Show thumbnail as square or in full aspect ratio */
-document.querySelector("button[aria-controls=images]").addEventListener('click', (e) => {
-  imageList.classList.toggle('aspect-ratio');
-});
-
-document.querySelector('input').addEventListener('input', (e) => {
-  console.log(`${e.target.value}`);
-  // imageList.style.setProperty("--scale", `${200*e.target.value/10000}`);
-  // imageList.style.setProperty("--column-width", `${200*e.target.value/100}px`);
-  imageList.style.setProperty("--column-width", `${e.target.value}vw`);
 });

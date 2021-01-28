@@ -1,4 +1,4 @@
-class MyIframe extends HTMLIFrameElement {
+class Iframe extends HTMLIFrameElement {
   constructor() {
     super();
 
@@ -70,7 +70,8 @@ class MyIframe extends HTMLIFrameElement {
 
       }
     );
+
   }
 }
 
-customElements.define('my-iframe', MyIframe, { extends: 'iframe' });
+customElements.define('my-iframe', Iframe, { extends: 'iframe' });

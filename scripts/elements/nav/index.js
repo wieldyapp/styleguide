@@ -13,12 +13,17 @@ class Nav extends HTMLElement {
       root.style.setProperty("--base-nav-ideal-width", `${e.pageX+4}px`); /** Get bar width from css */
     };
 
-    const persist = () => {
+    const onDragEnd = () => {
+      // document.querySelector('main').style.pointerEvents = 'auto';
       App.preferences = {
         ...App.preferences,
         ...{ navPaneWidth: getComputedStyle(root).getPropertyValue("--base-nav-ideal-width") }
       }
     };
+
+    const onDragStart = () => {
+      // document.querySelector('main').style.pointerEvents = 'none';
+    }
 
     const onDrag = (callback) => {
       const listen = (action) =>
@@ -27,7 +32,7 @@ class Nav extends HTMLElement {
         );
       const end = () => {
         listen("remove");
-        persist();
+        onDragEnd();
       };
       const events = {
         move: callback,
@@ -37,6 +42,7 @@ class Nav extends HTMLElement {
     };
 
     target.addEventListener("mousedown", (e) => {
+      onDragStart();
       const callback = (() => {
         return resize;
       })();

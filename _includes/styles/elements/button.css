@@ -1,4 +1,4 @@
-header button:first-of-type {
+header > button:first-of-type {
   position: relative;
   left: max(6px, calc(var(--sal) - 8px));
   left: -8px;
@@ -82,7 +82,7 @@ header button {
 
   position: relative;
 
-  z-index: var(--layer-3);
+  /* z-index: var(--layer-3); */
 
   display: flex;
 
@@ -101,6 +101,8 @@ header button {
 
   border-radius: var(--radius-2);
 
+  outline: none;
+
   box-shadow: none;
 
   cursor: pointer;
@@ -108,6 +110,12 @@ header button {
   transition: background 250ms var(--easing-decelerate);
 
   will-change: background;
+}
+
+button[aria-controls="sidebar"][aria-expanded="true"] {
+  color: #8A8F98;
+
+  background: #27282B;
 }
 
 header button:hover {

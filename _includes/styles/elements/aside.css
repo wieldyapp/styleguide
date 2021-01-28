@@ -21,19 +21,13 @@
   will-change: opacity;
 }
 
-#dragbar2:hover,
-body.resizing #dragbar2 {
+#dragbar2:hover {
   cursor: col-resize;
   opacity: 1;
 }
 
-body.resizing aside {
-  transition: none;
-}
-
 @media (max-width: 1023px) {
-  #dragbar2:hover,
-  body.resizing #dragbar2 {
+  #dragbar2:hover {
     cursor: initial;
     opacity: 0;
   }

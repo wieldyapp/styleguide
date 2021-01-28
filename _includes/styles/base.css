@@ -44,7 +44,7 @@ header {
 
   align-items: center;
 
-  /* justify-content:space-between; */
+  justify-content:space-between;
 
   box-sizing: content-box;
 
@@ -74,6 +74,8 @@ nav {
   background-color: var(--color-background);
 
   border-right: solid 1px var(--main-border-color);
+
+  will-change: width;
 }
 
 main {
@@ -129,6 +131,8 @@ aside {
 
   transition: width 250ms var(--easing-decelerate), box-shadow 150ms var(--easing-decelerate);
 
+  will-change: width, box-shadow;
+
 }
 
 aside[data-open] {
@@ -136,6 +140,10 @@ aside[data-open] {
   width: clamp(var(--ideal-aside));
 
   visibility: visible;
+}
+
+body:not(:hover) aside {
+  transition: none;
 }
 
 @media (max-width: 1023px) {
