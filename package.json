@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start" : "npx eleventy --serve --port 8081"
+    "start": "npx eleventy --serve --port 8081"
   },
   "repository": {
     "type": "git",

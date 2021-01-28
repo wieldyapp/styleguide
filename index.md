@@ -4,7 +4,15 @@ layout: base.liquid
 
 <main>
   <div>
-    <resizable-iframe name="preview" width="414" height="736" zoom="0.75" src="https://consid.se"></resizable-iframe>
+    <div class="iframe">
+      <iframe
+        is=my-iframe
+        srcdoc="<p>Hello, world</p>"
+        name="preview"
+        width="414"
+        height="736"
+      ></iframe>
+    </div>
   </div>
 </main>
 

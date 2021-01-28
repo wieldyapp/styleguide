@@ -20,7 +20,7 @@ header button:first-of-type {
 
   border-radius: var(--radius-1);
 
-  outline: none;
+  /* outline: none; */
   box-shadow: none;
 
   /* display: none; */
@@ -60,25 +60,31 @@ header button:first-of-type {
 
     transform: translateX(calc(-218px - env(safe-area-inset-left)));
 
+    visibility: hidden;
+
     transition: transform 250ms var(--easing-decelerate);
   }
 
   nav[data-open] {
     box-shadow: var(--elevation-2);
     transform: translateX(0);
+    visibility: visible;
   }
 }
 
 /* Fix */
 
 header button:last-of-type {
+
+}
+
+header button {
+
   position: relative;
-  /* left: max(6px, calc(var(--sal) - 8px)); */
-  /* left: -8px; */
 
   z-index: var(--layer-3);
 
-  /* display: none; */
+  display: flex;
 
   align-items: center;
 
@@ -95,13 +101,10 @@ header button:last-of-type {
 
   border-radius: var(--radius-2);
 
-  outline: none;
   box-shadow: none;
 
   cursor: pointer;
-}
 
-header button {
   transition: background 250ms var(--easing-decelerate);
 
   will-change: background;
@@ -114,4 +117,65 @@ header button:hover {
   background: #27282B;
 
   /* stroke: 2 */
+}
+
+img {
+  vertical-align: middle;
+}
+
+button[aria-controls="images"] {
+  display: flex;
+  flex-direction: column;
+}
+button[aria-controls="images"]::before,
+button[aria-controls="images"]::after {
+  transform-origin: center center;
+
+  /* transition: transform 1s ease; */
+}
+button[aria-controls="images"]:focus::before {
+  bottom: -2px;
+
+  transform: rotate(180deg);
+}
+button[aria-controls="images"]:focus::after {
+  top: -2px;
+
+  transform: rotate(0deg);
+}
+button[aria-controls="images"]::before {
+  position: relative;
+  bottom: 1px;
+
+  display: block;
+
+  width: 5px;
+  height: 5px;
+
+  background-color: var(--color-control-backface);
+
+  content: "";
+  clip-path: polygon(50% 50%, 0% 100%, 100% 100%);
+}
+
+button[aria-controls="images"]::after {
+  position: relative;
+  top: 1px;
+
+  display: block;
+
+  width: 5px;
+  height: 5px;
+
+  background-color: var(--color-control-backface);
+
+  transform: rotate(180deg);
+
+  content: "";
+  clip-path: polygon(50% 50%, 0% 100%, 100% 100%);
+}
+
+button[aria-controls="images"]:hover::before,
+button[aria-controls="images"]:hover::after {
+  background-color: #8A8F98;
 }

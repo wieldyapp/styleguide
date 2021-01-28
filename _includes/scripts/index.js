@@ -1,3 +1,8 @@
+class App {
+
+}
+
+
 // customElements.define(
 //   'resize-bar',
 //   class extends HTMLElement {
@@ -242,47 +247,47 @@ customElements.define(
   }
 );
 
-let dragging = 0;
-const root = document.documentElement;
-const target = document.getElementById("dragbar");
+// let dragging = 0;
+// const root = document.documentElement;
+// const target = document.getElementById("dragbar");
 
-const clearJSEvents = () => {
-  dragging = 0;
-  root.removeEventListener("mousemove", resize);
-  document.body.classList.remove("resizing");
-  localStorage.setItem(
-    "--base-nav-ideal-width",
-    getComputedStyle(document.documentElement).getPropertyValue(
-      "--base-nav-ideal-width"
-    )
-  );
-};
+// const clearJSEvents = () => {
+//   dragging = 0;
+//   root.removeEventListener("mousemove", resize);
+//   document.body.classList.remove("resizing");
+//   localStorage.setItem(
+//     "--base-nav-ideal-width",
+//     getComputedStyle(document.documentElement).getPropertyValue(
+//       "--base-nav-ideal-width"
+//     )
+//   );
+// };
 
-const resize = (e) => {
-  root.style.setProperty("--base-nav-ideal-width", `${e.pageX}px`);
-};
+// const resize = (e) => {
+//   root.style.setProperty("--base-nav-ideal-width", `${e.pageX}px`);
+// };
 
-target.onmousedown = (e) => {
-  e.preventDefault();
-  dragging = 1;
-  root.addEventListener("mousemove", resize);
-  document.body.classList.add("resizing");
-};
+// target.onmousedown = (e) => {
+//   e.preventDefault();
+//   dragging = 1;
+//   root.addEventListener("mousemove", resize);
+//   document.body.classList.add("resizing");
+// };
 
-target.addEventListener('touchend', (e) => {
-  e.preventDefault();
-  dragging = 1;
-  root.addEventListener("touchmove", resize);
-  document.body.classList.add("resizing");
-});
+// target.addEventListener('touchend', (e) => {
+//   e.preventDefault();
+//   dragging = 1;
+//   root.addEventListener("touchmove", resize);
+//   document.body.classList.add("resizing");
+// });
 
-document.onmouseup = () => {
-  dragging ? clearJSEvents() : "";
-};
+// document.onmouseup = () => {
+//   dragging ? clearJSEvents() : "";
+// };
 
-document.addEventListener('touchend', (e) => {
-  dragging ? clearJSEvents() : "";
-})
+// document.addEventListener('touchend', (e) => {
+//   dragging ? clearJSEvents() : "";
+// })
 
 // const onDrag = callback => {
 //   const listen = action =>
@@ -348,6 +353,48 @@ document.querySelector('header button:first-of-type').addEventListener('click', 
 });
 
 /* Toggle side bar */
-document.querySelector('header button:last-of-type').addEventListener('click', () => {
+document.querySelector("button[aria-controls=sidebar]").addEventListener('click', (e) => {
   document.querySelector('aside').toggleAttribute('data-open');
+});
+
+customElements.define('image-list', class extends HTMLElement {
+  constructor() {
+    super();
+  }
+  async connectedCallback() {
+    fetch('https://api.unsplash.com/photos?per_page=30', {
+      headers: {
+        'Authorization': 'Client-ID ThB5O0qyWMI8TuXjX85E6GObOWpFiTk0iAFEE5Z5J6I',
+      }
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log('Success:', data);
+        this.innerHTML = `
+      <div class="grid">
+        ${data.map((image, index) => `
+          <div>
+            <img src="${image.urls.thumb}" alt="${image.alt_description}" class="gallery__img" />
+          </div>
+        `).join("")}
+      </div>
+    `;
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+  }
+});
+
+const imageList = document.querySelector('image-list');
+/* Show thumbnail as square or in full aspect ratio */
+document.querySelector("button[aria-controls=images]").addEventListener('click', (e) => {
+  imageList.classList.toggle('aspect-ratio');
+});
+
+document.querySelector('input').addEventListener('input', (e) => {
+  console.log(`${e.target.value}`);
+  // imageList.style.setProperty("--scale", `${200*e.target.value/10000}`);
+  // imageList.style.setProperty("--column-width", `${200*e.target.value/100}px`);
+  imageList.style.setProperty("--column-width", `${e.target.value}vw`);
 });

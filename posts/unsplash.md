@@ -4,4 +4,6 @@ date: 2020-02-01
 layout: base.liquid
 ---
 
-Woff in empty room.
+<main>
+  <image-list></image-list>
+</main>

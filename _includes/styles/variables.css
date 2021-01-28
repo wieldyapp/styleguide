@@ -1,7 +1,10 @@
 :root {
 
   --base-nav-ideal-width: 250px;
-  --ideal-nav: 220px, var(--base-nav-ideal-width), 50vw;
+  --ideal-nav: 190px, var(--base-nav-ideal-width), 50vw;
+
+  --base-aside-ideal-width: 424px;
+  --ideal-aside: 320px, var(--base-aside-ideal-width), 50vw;
 
   --sat: env(safe-area-inset-top);
   --sar: env(safe-area-inset-right);

@@ -44,7 +44,7 @@ header {
 
   align-items: center;
 
-  justify-content:space-between;
+  /* justify-content:space-between; */
 
   box-sizing: content-box;
 
@@ -89,7 +89,6 @@ main {
   overflow-x: hidden;
 
   contain: content;
-
 }
 
 @supports (-webkit-touch-callout: none) {
@@ -106,13 +105,15 @@ main {
 
 aside {
 
+  position: relative;
+
   z-index: var(--layer-1);
 
   grid-area: aside;
 
   box-sizing: border-box;
 
-  width: clamp(190px, 424px, 50vw);
+  width: 0;
 
   height: calc(100vh - 56px);
 
@@ -124,15 +125,21 @@ aside {
 
   box-shadow: var(--elevation-2);
 
+  visibility:hidden;
+
   transition: width 250ms var(--easing-decelerate), box-shadow 150ms var(--easing-decelerate);
 
 }
 
-aside:not([data-open]) {
-  width: 0;
+aside[data-open] {
+
+  width: clamp(var(--ideal-aside));
+
+  visibility: visible;
 }
 
 @media (max-width: 1023px) {
+
   aside {
 
     position: fixed;
@@ -155,21 +162,22 @@ aside:not([data-open]) {
 
   }
 
+
   aside[data-open] {
 
     z-index: var(--layer-1);
 
+    width: 100vw;
+
     overflow-y: auto;
 
     border-left: none;
-    /* box-shadow: var(--elevation-2); */
     box-shadow: none;
     transform: translateX(0);
 
+    visibility: visible;
   }
-  aside:not([data-open]) {
-    width: 100vw;
-  }
+
 }
 
 toggle-switch {
@@ -364,42 +372,14 @@ summary > span::after {
   );
 }
 
+/*
+  * Prevents svg to shrink when flex is applie
+*/
+svg {
+  flex-shrink: 0;
+}
+
 /* By using [open] we can define different styles when the disclosure widget is open */
 details[open] summary > span::after {
   transform: rotate(180deg);
-}
-
-#dragbar {
-  position: absolute;
-  top: 0;
-  right: 0;
-
-  width: 4px;
-  min-width: unset;
-  height: 100%;
-  margin: 0;
-
-  background: var(--color-background-tint);
-  border-radius: unset;
-  box-shadow: unset;
-
-  opacity: 0;
-
-  transition: opacity 75ms var(--easing-accelerate);
-
-  will-change: opacity;
-}
-
-#dragbar:hover,
-body.resizing #dragbar {
-  cursor: col-resize;
-  opacity: 1;
-}
-
-@media (max-width: 1023px) {
-  #dragbar:hover,
-  body.resizing #dragbar {
-    cursor: initial;
-    opacity: 0;
-  }
 }

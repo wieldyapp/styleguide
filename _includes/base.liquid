@@ -14,9 +14,13 @@
   <meta name="color-scheme" content="dark light">
   <meta name="theme-color" content="#1f2023">
   <script>
-    const leftWidth = localStorage.getItem('--base-nav-ideal-width')
-      ?? getComputedStyle(document.documentElement).getPropertyValue('--base-nav-ideal-width');
-    document.documentElement.style.setProperty('--base-nav-ideal-width', leftWidth);
+    try {
+      const preferences = JSON.parse(localStorage.getItem('preferences'));
+      const navPaneWidth = preferences?.navPaneWidth ?? getComputedStyle(document.documentElement).getPropertyValue('--base-nav-ideal-width');
+      document.documentElement.style.setProperty('--base-nav-ideal-width', navPaneWidth);
+      const sidePaneWidth = preferences?.sidePaneWidth ?? getComputedStyle(document.documentElement).getPropertyValue('--base-aside-ideal-width');
+      document.documentElement.style.setProperty('--base-aside-ideal-width', sidePaneWidth);
+    } catch {}
   </script>
 </head>
 
@@ -27,6 +31,7 @@
   {{ content }}
 
   <script async type=module src="//static.brickpile.app/main.js?v=3"></script>
+  <script async type=module src=/scripts/main.js></script>
   <script async type=module src=/scripts.js></script>
 
 </body>
