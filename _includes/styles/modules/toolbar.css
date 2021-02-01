@@ -1,6 +1,10 @@
 tool-bar {
   display: flex;
 
-  outline: hotpink solid 1px;
+  /* outline: hotpink solid 1px; */
   place-items: center;
+}
+
+tool-bar > * {
+  margin-left: 6px;
 }

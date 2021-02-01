@@ -13,7 +13,7 @@ class Aside extends HTMLElement {
     App?.preferences?.showSidePane ? this.setAttribute('data-open', '') : this.removeAttribute('data-open');
 
     const resize = (e) => {
-      root.style.setProperty("--base-aside-ideal-width", `${window.innerWidth - e.pageX + 4}px`); /** Get bar width from css */
+      root.style.setProperty("--base-aside-ideal-width", `${window.innerWidth - e.pageX + 1}px`);
     };
 
     const onDragEnd = () => {

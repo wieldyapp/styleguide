@@ -3,7 +3,16 @@ class App {
    * @param {object} args
    */
   init(args) {
-    console.log('init');
+    this.bindEvents();
+  }
+
+  /**
+   * Bind events used throughout the app
+   */
+  bindEvents() {
+    window.addEventListener('DOMContentLoaded', (event) => {
+      document.body.classList.add('loaded');
+    });
   }
 
   get preferences() {

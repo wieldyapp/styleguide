@@ -8,25 +8,25 @@
   height: 100%;
   margin: 0;
 
-  background: var(--color-background-tint);
+  /* background: var(--color-background-tint); */
   border-radius: unset;
   box-shadow: unset;
 
   opacity: 0;
 
-  transition: opacity 75ms var(--easing-accelerate);
+  /* transition: opacity 75ms var(--easing-accelerate); */
 
-  will-change: opacity;
+  /* will-change: opacity; */
 }
 
 #dragbar:hover {
   cursor: col-resize;
-  opacity: 1;
+  /* opacity: 1; */
 }
 
 @media (max-width: 1023px) {
   #dragbar:hover {
     cursor: initial;
-    opacity: 0;
+    /* opacity: 0; */
   }
 }

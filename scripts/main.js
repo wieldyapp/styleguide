@@ -2,7 +2,11 @@ import App from './app.js';
 import './elements/iframe/index.js'
 import './elements/nav/index.js'
 import './elements/aside/index.js'
+import './components/new-button/index.js'
+import './components/context-menu/index.js'
 import './toolbar.js'
+
+App.init();
 
 /* Toggle nav bar */
 document.querySelector('header button:first-of-type').addEventListener('click', () => {

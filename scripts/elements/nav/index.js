@@ -10,7 +10,7 @@ class Nav extends HTMLElement {
     const target = document.getElementById("dragbar");
 
     const resize = (e) => {
-      root.style.setProperty("--base-nav-ideal-width", `${e.pageX+4}px`); /** Get bar width from css */
+      root.style.setProperty("--base-nav-ideal-width", `${e.pageX+2}px`); /** Get bar width from css */
     };
 
     const onDragEnd = () => {
