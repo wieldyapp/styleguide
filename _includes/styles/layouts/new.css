@@ -1,0 +1,12 @@
+@media (min-width: 1023px) {
+  body.new {
+    grid-template-areas:
+      "nav header aside"
+      "nav content aside";
+      grid-template-rows: 56px 1fr;
+    grid-template-columns: clamp(var(--ideal-nav)) 1fr auto;
+  }
+  body.new aside {
+    height: 100vh;
+  }
+}

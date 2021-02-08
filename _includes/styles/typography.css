@@ -127,6 +127,26 @@ a:any-link {
   text-decoration: none;
 }
 
+input { outline: none; }
+
+input[type=text] {
+  height: var(--spacing-2);
+
+  padding-right: var(--spacing-000);
+  padding-left: var(--spacing-000);
+
+  color: var(--color-neutral-200);
+
+  font-size: var(--scale-1);
+
+  background: transparent;
+  border:0;
+}
+
+::placeholder {
+  color: var(--color-neutral-400);
+}
+
 /* a:link { color: blue; }
 a:visited { color: purple; }
 a:hover { color: red; }

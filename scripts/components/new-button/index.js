@@ -22,12 +22,16 @@ customElements.define('new-button', class extends HTMLElement {
     return html`
       <style>
 
+        :host-context(.new) {
+          display:none;
+        }
+
         :host {
           display:flex;
           height: 28px;
         }
 
-        button {
+        :host > a {
           border: 0;
           background-color: transparent;
           display:flex;
@@ -44,9 +48,9 @@ customElements.define('new-button', class extends HTMLElement {
           box-shadow: var(--elevation-1);
         }
 
-        button:hover,
-        button:focus,
-        button:active {
+        :host > a:hover,
+        :host > a:focus,
+        :host > a:active {
           background-color: var(--color-primary-400);
           cursor: pointer;
         }
@@ -134,19 +138,19 @@ customElements.define('new-button', class extends HTMLElement {
         }
 
       </style>
-      <button>
+      <a href="/new">
         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M12 5V19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
           <path d="M5 12H19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
         </svg>
-      </button>
+      </a>
       <context-menu>
         <svg slot="icon" width="13" height="9" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M6.74658 9.37677L12.7466 15.3768L18.7466 9.37677" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
         </svg>
         <ul slot="content">
           <li>
-            <a href="/">
+            <a href="/new">
               <svg width="15" height="15" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M20.7456 9.05536H11.7456C10.641 9.05536 9.74561 9.95079 9.74561 11.0554V20.0554C9.74561 21.1599 10.641 22.0554 11.7456 22.0554H20.7456C21.8502 22.0554 22.7456 21.1599 22.7456 20.0554V11.0554C22.7456 9.95079 21.8502 9.05536 20.7456 9.05536Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 <path d="M5.74561 15.0554H4.74561C4.21517 15.0554 3.70646 14.8446 3.33139 14.4696C2.95632 14.0945 2.74561 13.5858 2.74561 13.0554V4.05536C2.74561 3.52493 2.95632 3.01622 3.33139 2.64115C3.70646 2.26607 4.21517 2.05536 4.74561 2.05536H13.7456C14.276 2.05536 14.7847 2.26607 15.1598 2.64115C15.5349 3.01622 15.7456 3.52493 15.7456 4.05536V5.05536" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>

@@ -1,8 +1,12 @@
+import { createStore, useState, useConfig } from 'https://unpkg.com/@wieldyapp/wieldy'
 class App {
   /**
    * @param {object} args
    */
-  init(args) {
+  async init(args) {
+
+    const store = createStore({ actions: {}, mutations: {}, initialState: {} });
+
     this.bindEvents();
   }
 
@@ -18,7 +22,7 @@ class App {
   get preferences() {
     try {
       return JSON.parse(localStorage.getItem('preferences'));
-    } catch(error) {
+    } catch (error) {
       return {}
     }
   }

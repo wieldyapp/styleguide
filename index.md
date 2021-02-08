@@ -1,5 +1,6 @@
 ---
 layout: base.liquid
+className: workspace
 ---
 
 <main>
@@ -16,4 +17,6 @@ layout: base.liquid
   </div>
 </main>
 
-{% include aside.liquid %}
+<aside id=sidebar is="resizable-aside">
+
+</aside>

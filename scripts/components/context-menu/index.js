@@ -11,9 +11,6 @@ const css = `
     height: 100%;
   }
 
-  ::slotted(*) {
-  }
-
   summary::-webkit-details-marker {
     display: none
   }
