@@ -21,10 +21,12 @@ customElements.define('new-button', class extends HTMLElement {
   get template() {
     return html`
       <style>
+
         :host {
           display:flex;
           height: 28px;
         }
+
         button {
           border: 0;
           background-color: transparent;
@@ -36,10 +38,12 @@ customElements.define('new-button', class extends HTMLElement {
           background-color: var(--color-primary-500);
           border-top-left-radius:var(--radius-2);
           border-bottom-left-radius:var(--radius-2);
+          margin:0;
           margin-right: 1px;
           transition: background-color 150ms var(--easing-standard);
           box-shadow: var(--elevation-1);
         }
+
         button:hover,
         button:focus,
         button:active {

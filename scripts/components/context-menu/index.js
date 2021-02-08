@@ -1,6 +1,17 @@
 const css = `
+
   :host {
     display: flex;
+  }
+
+  slot[name=icon] {
+    display: flex;
+    justify-content: center;
+    place-items: center;
+    height: 100%;
+  }
+
+  ::slotted(*) {
   }
 
   summary::-webkit-details-marker {
@@ -11,7 +22,6 @@ const css = `
     height: 100%;
     width:100%;
     display: flex;
-    place-items: center;
     place-content: center;
     align-items: center;
     border: solid 1px var(--color-primary-500);
