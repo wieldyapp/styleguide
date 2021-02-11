@@ -1,0 +1,16 @@
+.settings {
+  --grid-template-areas:
+    "nav content";
+  --grid-template-columns: clamp(var(--ideal-nav)) 1fr;
+}
+
+.settings main {
+  height: 100vh;
+}
+
+/*
+  Create a layout for settings :)
+*/
+.settings layout-default > header {
+  display: none;
+}

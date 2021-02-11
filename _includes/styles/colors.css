@@ -17,7 +17,7 @@
  @media(prefers-color-scheme: no-preference), (prefers-color-scheme:dark) {
   :root {
 
-    /* --color-primary-50: #ffffff;
+    --color-primary-50: #ffffff;
     --color-primary-100: #f4f4f4;
     --color-primary-200: #D7DAF4;
     --color-primary-300: #AFB5E9;
@@ -26,7 +26,7 @@
     --color-primary-600: #3846C7;
     --color-primary-700: #2D389F;
     --color-primary-800: #222A77;
-    --color-primary-900: #161C50; */
+    --color-primary-900: #161C50;
 
     /* --color-primary-50: #ffffff;
     --color-primary-100: #FEF6E7;
@@ -39,7 +39,7 @@
     --color-primary-800: #7A5406;
     --color-primary-900: #493304; */
 
-    --color-primary-50: #F8FCFF;
+    /* --color-primary-50: #F8FCFF;
     --color-primary-100: #DEF1FF;
     --color-primary-200: #ABDCFF;
     --color-primary-300: #78C7FF;
@@ -48,7 +48,7 @@
     --color-primary-600: #0082DE;
     --color-primary-700: #0064AB;
     --color-primary-800: #004678;
-    --color-primary-900: #002845;
+    --color-primary-900: #002845; */
 
     --color-neutral-50: #f4f4f4;
     --color-neutral-100: #e9e9e9;

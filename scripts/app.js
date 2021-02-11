@@ -1,8 +1,11 @@
+import { dbManager } from './shared/idb/manager.js'
 class App {
   /**
    * @param {object} args
    */
   async init(args) {
+
+    dbManager.init();
 
     this.bindEvents();
 

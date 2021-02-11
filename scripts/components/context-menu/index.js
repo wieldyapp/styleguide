@@ -46,18 +46,8 @@ const css = `
     will-change: transform, opacity;
     left: var(--context-menu-left);
     right: var(--context-menu-right);
-    z-index: 99;
-  }
-
-  details[open] summary:before {
+    z-index: var(--layer-top);
     position: fixed;
-    content: '';
-    display: block;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    top: 0;
-    /*background: rgba(0, 0, 0, 0.3);*/
   }
 
   /* Fix for Safari */
@@ -120,7 +110,6 @@ export default class ContextMenu extends HTMLElement {
     if(attrName === 'open') {
       this.details_.setAttribute('open', '');
     }
-    // console.log('Custom element attributes changed.');
   }
 
   disconnectedCallback() {

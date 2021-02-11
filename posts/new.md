@@ -72,6 +72,7 @@ className: new
   }
 
 </style>
+
 <main>
   <form>
     <div class="new__details">

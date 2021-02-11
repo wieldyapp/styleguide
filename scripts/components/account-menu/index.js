@@ -6,7 +6,6 @@ import { html, render } from 'https://cdn.skypack.dev/lit-html';
 const css = `
   :host {
     border-radius: var(--radius-2);
-    position: fixed;
     z-index: var(--layer-top);
     color: rgb(98, 102, 109);
     transition: color 150ms, background-color 150ms;
@@ -72,7 +71,7 @@ const css = `
   }
 
   a:any-link {
-    color: rgb(247, 248, 248);
+    color: var(--color-neutral-300);
     font-weight: var(--font-weight-regular);
     font-size: var(--scale-1);
     text-decoration: none;

@@ -1,5 +1,4 @@
 import { html, render } from 'https://cdn.skypack.dev/lit-html';
-import App from '../../app.js';
 
 // stylesheet
 // ===============================================================================================
@@ -52,12 +51,6 @@ const css = `
 
   }
 
-  button[aria-expanded="true"] {
-    color: #8A8F98;
-
-    background: #27282B;
-  }
-
   .icon {
     color: var(--color-control-backface);
 
@@ -83,9 +76,6 @@ customElements.define('navbar-toggle', class extends HTMLElement {
     const { shadowRoot } = this;
     /* Toggle nav bar */
     shadowRoot.querySelector('button')?.addEventListener('click', (e) => {
-      /**
-       * TODO only set localStorage property
-       */
       e.currentTarget.setAttribute('aria-expanded', document.querySelector('nav')?.toggleAttribute('data-open'));
     });
   }
