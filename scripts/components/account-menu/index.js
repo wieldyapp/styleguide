@@ -127,9 +127,7 @@ customElements.define('account-menu', class extends HTMLElement {
     this.bindEvents();
   }
 
-  connectedCallback() {
-    const { shadowRoot } = this;
-  }
+  connectedCallback() { }
 
   bindEvents() {
     window.addEventListener('offline', () => this.render());
