@@ -81,13 +81,15 @@ const css = `
     background-color: rgb(45, 47, 54);
   }
 
-  ul :nth-last-child(2) {
+  ul :nth-last-child(2),
+  ul :nth-last-child(5) {
     padding-bottom: 4px;
 
     border-bottom: solid 1px rgb(48, 50, 54);
   }
 
-  ul :nth-last-child(2) + li {
+  ul :nth-last-child(2) + li,
+  ul :nth-last-child(5) + li {
     padding-top: 4px;
   }
 
@@ -153,13 +155,14 @@ customElements.define('account-menu', class extends HTMLElement {
           </svg>
         </div>
         <ul slot="content">
-          <li><a href="/preferences">Settings</a></li>
-          <li><a href="//${document.location.host.split('.').splice(1).join('.')}/changelog">Changelog</a></li>
-          <li><a href="/auth/exit" target="_blank">Logout</a></li>
-          <li><a href="/settings">Keyboard shortcuts</a></li>
-          <li><a href="/settings">Join Wieldy Slack</a></li>
-          <li><a href="/settings">Send feedback</a></li>
-          <li><a href="/settings">Refer to Wieldy</a></li>
+          <li><a href="/preferences">View profile</a></li>
+          <li><a href="/changelog">Settings</a></li>
+          <li><a href="/auth/exit" target="_blank">Download desktop app</a></li>
+          <li><a href="/settings">Show keyboard shortcuts</a></li>
+          <li><a href="/settings">Changelog</a></li>
+          <li><a href="/settings">Join Slack community</a></li>
+          <li><a href="/settings">Help & Support</a></li>
+          <li><a href="/settings">Log out</a></li>
         </ul>
       </context-menu>
     `;
