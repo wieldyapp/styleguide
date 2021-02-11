@@ -11,10 +11,6 @@ className: new
     display:flex;
   }
 
-  .new__details input {
-    outline: none;
-  }
-
   .new__status {
 
     height: 100%;

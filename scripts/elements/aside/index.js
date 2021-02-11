@@ -4,13 +4,15 @@ class Aside extends HTMLElement {
   constructor() {
     super();
 
-    this.insertAdjacentHTML("beforeend", '<div id="dragbar2"></div>');
+    this.bindEvents();
+
+    this.insertAdjacentHTML("beforeend", '<div class="dragbar"></div>');
 
     const root = document.documentElement;
-    const target = document.getElementById("dragbar2");
+    const target = this.querySelector(".dragbar");
     const transition = this.style.transition;
 
-    App?.preferences?.showSidePane ? this.setAttribute('data-open', '') : this.removeAttribute('data-open');
+    this.setState();
 
     const resize = (e) => {
       root.style.setProperty("--base-aside-ideal-width", `${window.innerWidth - e.pageX + 1}px`);
@@ -45,7 +47,7 @@ class Aside extends HTMLElement {
       listen("add");
     };
 
-    target.addEventListener("mousedown", (e) => {
+    target?.addEventListener("mousedown", (e) => {
       onDragStart();
       const callback = (() => {
         return resize;
@@ -57,13 +59,14 @@ class Aside extends HTMLElement {
 
   }
 
-  static get observedAttributes() {
-    return ['data-open'];
+  bindEvents() {
+    window.addEventListener('storage', () => this.setState());
   }
 
-  attributeChangedCallback(name, oldValue, newValue) {
-    App.preferences = { ...App.preferences,  ...{ showSidePane: this.hasAttribute('data-open') } };
+  setState() {
+    App?.preferences?.showSidePane ? this.setAttribute('data-open', '') : this.removeAttribute('data-open');
   }
+
 }
 
 customElements.define("resizable-aside", Aside, { extends: "aside" });

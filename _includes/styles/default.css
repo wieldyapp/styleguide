@@ -1,0 +1,20 @@
+/*
+  Remove the white-space below an image without changing its default display
+*/
+img {
+  vertical-align: middle;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.icon {
+  color: var(--color-primary-500);
+
+  stroke-width: var(--stroke-width-medium);
+}
+
+[data-layout] {
+  display: contents;
+}

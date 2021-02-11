@@ -111,8 +111,20 @@ h6 {
   font-size: 0.8rem;
 }
 
+.headline {
+  margin: 0;
+
+  color: var(--color-neutral-100);
+  font-weight: var(--font-weight-light);
+  font-size: var(--scale-4);
+}
+
 .plus {
   font-weight: var(--font-weight-semibold);
+}
+
+.mini {
+  font-size: var(--scale-000);
 }
 
 p,
@@ -127,7 +139,7 @@ a:any-link {
   text-decoration: none;
 }
 
-input { outline: none; }
+/* input { outline: none; } */
 
 input[type=text] {
   height: var(--spacing-2);

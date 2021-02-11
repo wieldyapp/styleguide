@@ -1,13 +1,15 @@
-import { createStore, useState, useConfig } from 'https://unpkg.com/@wieldyapp/wieldy'
 class App {
   /**
    * @param {object} args
    */
   async init(args) {
 
-    const store = createStore({ actions: {}, mutations: {}, initialState: {} });
-
     this.bindEvents();
+
+    // this.preferences = {
+    //   ...this.preferences,
+    //   ...{ beta: true }
+    // }
   }
 
   /**

@@ -4,13 +4,6 @@ const css = `
     display: flex;
   }
 
-  slot[name=icon] {
-    display: flex;
-    justify-content: center;
-    place-items: center;
-    height: 100%;
-  }
-
   summary::-webkit-details-marker {
     display: none
   }
@@ -21,10 +14,9 @@ const css = `
     display: flex;
     place-content: center;
     align-items: center;
-    border: solid 1px var(--color-primary-500);
-    background-color: var(--color-primary-500);
-    border-top-right-radius:var(--radius-2);
-    border-bottom-right-radius:var(--radius-2);
+    border: solid 1px var(--context-menu-border-color);
+    background-color: var(--context-menu-backface);
+    border-radius: var(--context-menu-border-radius);
     box-sizing: border-box;
     transition: background-color 150ms var(--easing-standard);
   }
@@ -32,19 +24,17 @@ const css = `
   summary:hover,
   summary:focus,
   summary:active {
-    background-color: var(--color-primary-400);
+    background-color: var(--context-menu-backface-hover);
   }
 
   summary:focus-visible {
-    /*outline: -webkit-focus-ring-color auto 5px;*/
+    outline: -webkit-focus-ring-color auto 5px;
   }
 
   details {
     width:100%;
     cursor: pointer;
-    /*z-index: 99;*/
     position: relative;
-    /*perspective: 2000px;*/
   }
 
   details[open] summary ~ * {
@@ -54,8 +44,8 @@ const css = `
     transform-origin: 100% 0;
     transition-property: transform, opacity;
     will-change: transform, opacity;
-    /*left: var(--ctx-menu-left, -7px);*/
-    right:0;
+    left: var(--context-menu-left);
+    right: var(--context-menu-right);
     z-index: 99;
   }
 
@@ -68,6 +58,14 @@ const css = `
     bottom: 0;
     top: 0;
     /*background: rgba(0, 0, 0, 0.3);*/
+  }
+
+  /* Fix for Safari */
+  slot[name=icon] {
+    display: flex;
+    justify-content: center;
+    place-items: center;
+    height: 100%;
   }
 
   @keyframes open {
@@ -84,7 +82,7 @@ const css = `
 
 const html = `
   <details>
-    <summary>
+    <summary part="sum">
       <slot name="icon"></slot>
     </summary>
     <nav>

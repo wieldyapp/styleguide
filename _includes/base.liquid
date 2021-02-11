@@ -26,9 +26,11 @@
 
 <body class="{{ className }}">
 
-  {% include header.liquid %}
-  {% include nav.liquid %}
-  {{ content }}
+  <layout-default data-layout>
+    {% include header.liquid %}
+    {% include nav.liquid %}
+    {{ content }}
+  </layout-default>
 
   <script async type=module src=/scripts/main.js></script>
   <script async type=module src=/scripts.js></script>

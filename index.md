@@ -20,3 +20,5 @@ className: workspace
 <aside id=sidebar is="resizable-aside">
 
 </aside>
+
+<!-- <view-workspace></view-workspace> -->

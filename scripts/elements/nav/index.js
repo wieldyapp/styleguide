@@ -4,10 +4,10 @@ class Nav extends HTMLElement {
   constructor() {
     super();
 
-    this.insertAdjacentHTML("beforeend", '<div id="dragbar"></div>');
+    this.insertAdjacentHTML("beforeend", '<div class="dragbar"></div>');
 
     const root = document.documentElement;
-    const target = document.getElementById("dragbar");
+    const target = this.querySelector(".dragbar");
 
     const resize = (e) => {
       root.style.setProperty("--base-nav-ideal-width", `${e.pageX+2}px`); /** Get bar width from css */

@@ -22,7 +22,7 @@ customElements.define('new-button', class extends HTMLElement {
     return html`
       <style>
 
-        :host-context(.new) {
+        :host-context(.new, .preferences) {
           display:none;
         }
 
@@ -58,8 +58,11 @@ customElements.define('new-button', class extends HTMLElement {
         context-menu {
           width: 23px;
           box-shadow: var(--elevation-1);
-          border-bottom-right-radius: var(--radius-2);
-          border-top-right-radius: var(--radius-2);
+          --context-menu-backface: var(--color-primary-500);
+          --context-menu-border-color: var(--color-primary-500);
+          --context-menu-border-radius: 0 var(--radius-2) var(--radius-2) 0;
+          --context-menu-backface-hover: var(--color-primary-400);
+          --context-menu-right: 0;
         }
 
         context-menu ul {

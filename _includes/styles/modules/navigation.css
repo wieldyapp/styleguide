@@ -10,6 +10,8 @@ nav header {
 
   align-items: center;
 
+  justify-content: flex-end;
+
   box-sizing: content-box;
 
   padding: 0;

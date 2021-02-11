@@ -1,4 +1,4 @@
-#dragbar {
+nav .dragbar {
   position: absolute;
   top: 0;
   right: 0;
@@ -8,25 +8,43 @@
   height: 100%;
   margin: 0;
 
-  /* background: var(--color-background-tint); */
   border-radius: unset;
   box-shadow: unset;
 
   opacity: 0;
-
-  /* transition: opacity 75ms var(--easing-accelerate); */
-
-  /* will-change: opacity; */
 }
 
-#dragbar:hover {
+nav .dragbar:hover {
   cursor: col-resize;
-  /* opacity: 1; */
 }
 
 @media (max-width: 1023px) {
-  #dragbar:hover {
+
+  nav {
+    position: fixed;
+
+    z-index: var(--layer-2);
+
+    box-sizing: border-box;
+
+    width: clamp(190px, 220px, 50vw);
+
+    height: 100vh;
+
+    transform: translateX(calc(-218px - env(safe-area-inset-left)));
+
+    visibility: hidden;
+
+    transition: transform 250ms var(--easing-decelerate);
+  }
+
+  nav[data-open] {
+    box-shadow: var(--elevation-2);
+    transform: translateX(0);
+    visibility: visible;
+  }
+
+  nav .dragbar:hover {
     cursor: initial;
-    /* opacity: 0; */
   }
 }

@@ -1,4 +1,4 @@
-#dragbar2 {
+aside .dragbar {
   position: absolute;
   top: 0;
   left: 0;
@@ -10,25 +10,18 @@
 
   padding: 0;
 
-  /* background: var(--color-background-tint); */
   border-radius: unset;
   box-shadow: unset;
 
   opacity: 0;
-
-  /* transition: opacity 75ms var(--easing-accelerate); */
-
-  /* will-change: opacity; */
 }
 
-#dragbar2:hover {
+aside .dragbar:hover {
   cursor: col-resize;
-  /* opacity: 1; */
 }
 
 @media (max-width: 1023px) {
-  #dragbar2:hover {
+  aside .dragbar:hover {
     cursor: initial;
-    /* opacity: 0; */
   }
 }

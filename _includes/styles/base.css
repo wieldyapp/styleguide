@@ -14,17 +14,11 @@ html {
   scroll-behavior: smooth;
 }
 
-ul {
-  list-style-type: none;
-}
-
 body {
   display: grid;
-  grid-template-areas:
-    "nav header header"
-    "nav content aside";
-  grid-template-rows: 56px 1fr;
-  grid-template-columns: clamp(var(--ideal-nav)) 1fr auto;
+  grid-template-areas: var(--grid-template-areas);
+  grid-template-rows: var(--grid-template-rows);
+  grid-template-columns: var(--grid-template-columns);
 
   min-height: 100vh;
   /* mobile viewport bug fix */
@@ -78,7 +72,7 @@ nav {
   height: 100vh;
   padding: 0 var(--spacing-0) max(var(--spacing-0), env(safe-area-inset-bottom)) max(var(--spacing-0), env(safe-area-inset-left));
 
-  overflow: visible;
+  overflow-x: hidden;
   overflow-y: auto;
 
   background-color: var(--color-background);
@@ -132,7 +126,6 @@ aside {
   overflow-y: auto;
 
   background-color: var(--color-background);
-  /* border-top: 1px solid var(--main-border-color); */
   border-left: 1px solid var(--main-border-color);
 
   box-shadow: var(--elevation-2);
@@ -179,7 +172,6 @@ body:not(:hover) aside {
     transition: transform 250ms var(--easing-decelerate);
 
   }
-
 
   aside[data-open] {
 
@@ -349,7 +341,6 @@ summary {
   font-weight: var(--font-weight-semibold);
   letter-spacing: var(--tracking-1);
 
-  outline: none;
   cursor: pointer;
 
 }
@@ -400,4 +391,8 @@ svg {
 /* By using [open] we can define different styles when the disclosure widget is open */
 details[open] summary > span::after {
   transform: rotate(180deg);
+}
+
+:not(:defined) {
+  display: none;
 }

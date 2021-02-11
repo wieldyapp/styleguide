@@ -6,12 +6,35 @@
   --base-aside-ideal-width: 424px;
   --ideal-aside: 320px, var(--base-aside-ideal-width), 50vw;
 
+  --grid-template-areas:
+    "nav header header"
+    "nav content aside";
+  --grid-template-rows: 56px 1fr;
+  --grid-template-columns: clamp(var(--ideal-nav)) 1fr auto;
+
   --sat: env(safe-area-inset-top);
   --sar: env(safe-area-inset-right);
   --sab: env(safe-area-inset-bottom);
   --sal: env(safe-area-inset-left);
 
+  --stroke-width-thin: 1;
+  --stroke-width-medium: 2;
+
+  /*
+    --color-state-focus-shadow
+    --color-state-focus-border
+  */
+
   color-scheme: dark light;
+}
+
+@media (max-width: 1023px) {
+  :root {
+    --grid-template-areas:
+      "header"
+      "content";
+    --grid-template-columns: 1fr;
+  }
 }
 
 @media(prefers-color-scheme: no-preference), (prefers-color-scheme:dark) {

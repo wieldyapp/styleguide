@@ -1,9 +1,9 @@
-import App from './app.js';
 import { html, render } from 'https://cdn.skypack.dev/lit-html';
 
 class Toolbar extends HTMLElement {
   constructor() {
     super();
+
     this.render();
     this.bindEvents();
   }
@@ -27,12 +27,7 @@ class Toolbar extends HTMLElement {
       <input type=range min=5 max=15 />
       ` : '' }
       <new-button></new-button>
-      <button type="button" aria-label="Toggle sidebar" aria-controls="sidebar" aria-expanded="${App.preferences?.showSidePane}">
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M3.33333 14L12.6667 14C13.403 14 14 13.403 14 12.6667L14 3.33333C14 2.59695 13.403 2 12.6667 2L3.33333 2C2.59695 2 2 2.59695 2 3.33333L2 12.6667C2 13.403 2.59695 14 3.33333 14Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
-          <path d="M10 14L10 2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
-        </svg>
-      </button>
+      <sidebar-toggle></sidebar-toggle>
     `;
   }
 }
