@@ -18,3 +18,7 @@ ul {
 [data-layout] {
   display: contents;
 }
+
+:not(:defined) {
+  display: none;
+}
