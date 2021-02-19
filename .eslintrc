@@ -8,5 +8,15 @@
     "ecmaVersion": 12,
     "sourceType": "module"
   },
-  "rules": {}
+  "rules": {
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "always"
+      }
+    ],
+    "class-methods-use-this": "off",
+    "import/no-unresolved": "off"
+  }
 }

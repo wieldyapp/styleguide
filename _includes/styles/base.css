@@ -4,7 +4,7 @@ html {
 
   overflow: hidden;
 
-  font-size: var(--scale-0);
+  font-size: 13px;
 
   font-family: var(--font-family-standard);
   line-height: var(--leading-normal);
@@ -30,15 +30,6 @@ body {
 
   background-color: var(--color-background);
 
-  opacity: 0;
-
-  transition: opacity 120ms;
-
-  will-change: opacity;
-}
-
-body.loaded {
-  opacity: 1;
 }
 
 header {
@@ -192,7 +183,7 @@ body:not(:hover) aside {
 
 toggle-switch {
   background-color: var(--color-control-backface);
-  box-shadow: 0 0 0 1px var(--color-control-border);
+  /* box-shadow: 0 0 0 1px var(--color-control-border); */
 }
 
 toggle-switch:not([disabled]) {
@@ -201,22 +192,22 @@ toggle-switch:not([disabled]) {
 
 toggle-switch:not([disabled]):not([checked]):hover {
   background-color: var(--color-control-backface-hover);
-  box-shadow: 0 0 0 1px var(--color-control-backface-hover);
+  /* box-shadow: 0 0 0 1px var(--color-control-backface-hover); */
 }
 
 toggle-switch::after {
   background-color: var(--color-control);
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.07), 0 1px 3px 0 rgba(59, 65, 94, 0.1);
+  /* box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.07), 0 1px 3px 0 rgba(59, 65, 94, 0.1); */
 }
 
 toggle-switch[checked] {
   background-color: var(--color-primary-500);
-  box-shadow: 0 0 0 1px var(--color-primary-500);
+  /* box-shadow: 0 0 0 1px var(--color-primary-500); */
 }
 
 toggle-switch[checked]:hover {
   background-color: var(--color-primary-400);
-  box-shadow: 0 0 0 1px var(--color-primary-400);
+  /* box-shadow: 0 0 0 1px var(--color-primary-400); */
 }
 
 toggle-switch[checked]::after {
@@ -225,7 +216,7 @@ toggle-switch[checked]::after {
 
 checkbox-switch {
   background-color: var(--color-control-backface);
-  box-shadow: none;
+  /* box-shadow: none; */
 }
 
 checkbox-switch:not([disabled]) {
@@ -345,26 +336,35 @@ summary {
 
 }
 
-summary { list-style-type: none; } /* Firefox */
-summary::-webkit-details-marker, /* Chrome */
+summary::-webkit-details-marker {
+  margin-right: 10px;
+
+  color: #61646C;
+}
+
+summary::marker {
+  margin-right: 10px;
+
+  color: #61646C;
+}
+
+/* summary { list-style-type: none; } Firefox
+summary::-webkit-details-marker, /* Chrome
 summary::marker {
   display: none;
-}
+} */
 
-summary > span {
+/* summary > span {
   display: flex;
   justify-content: space-between;
-}
+} */
 
-summary > span::after {
+/* summary > span::after {
   width: 16px;
   height: 16px;
   margin-top: 3px;
 
-  /* justify-self: end; */
   margin-right: 8px;
-
-  /* background-color: var(--main-border-color); */
 
   background-color: var(--color-neutral-400);
 
@@ -379,16 +379,11 @@ summary > span::after {
     75% 25%,
     50% 50%
   );
-}
+} */
 
-/*
-  * Prevents svg to shrink when flex is applie
-*/
-svg {
-  flex-shrink: 0;
-}
+
 
 /* By using [open] we can define different styles when the disclosure widget is open */
-details[open] summary > span::after {
+/* details[open] summary > span::after {
   transform: rotate(180deg);
-}
+} */

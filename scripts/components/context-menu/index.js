@@ -43,7 +43,7 @@ const css = `
     width: 200px;
     transform-origin: 100% 0;
     transition-property: transform, opacity;
-    will-change: transform, opacity;
+
     left: var(--context-menu-left);
     right: var(--context-menu-right);
     z-index: var(--layer-top);

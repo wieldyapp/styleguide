@@ -1,5 +1,5 @@
 /*
-  Remove the white-space below an image without changing its default display
+  * Remove the white-space below an image without changing its default display
 */
 img {
   vertical-align: middle;
@@ -19,6 +19,25 @@ ul {
   display: contents;
 }
 
+::placeholder {
+  color: var(--color-neutral-400);
+}
+
+/*
+  * Prevents not defined elements to be visible
+*/
 :not(:defined) {
   display: none;
 }
+
+/*
+  * Prevents svg to shrink when flex is applied
+*/
+svg {
+  flex-shrink: 0;
+}
+
+/*
+  * Dialog
+  TODO: Move ...
+*/

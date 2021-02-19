@@ -4,7 +4,7 @@
   ],
   "plugins": [
     "stylelint-order",
-    "stylelint-config-rational-order/plugin"
+    "stylelint-config-rational-order/plugin",
   ],
   "rules": {
     "selector-type-no-unknown": [

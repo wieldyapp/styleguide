@@ -1,7 +1,6 @@
 import { html, render } from 'https://cdn.skypack.dev/lit-html';
 
 customElements.define('account-menu', class extends HTMLElement {
-
   constructor() {
     super();
 
@@ -35,6 +34,9 @@ customElements.define('account-menu', class extends HTMLElement {
           border-radius: var(--radius-2);
 
           transition: color 150ms, background-color 150ms;
+
+          outline: none;
+
         }
 
         :host(:hover) {
@@ -150,12 +152,13 @@ customElements.define('account-menu', class extends HTMLElement {
         .offline {
           background-color: var(--color-neutral-400);
         }
+
       </style>
       <context-menu aria-label="Account menu" role="menu">
         <div slot="icon">
           <div class="avatar">
             <img src="https://ik.imagekit.io/brickpile/tr:w-18,h-18/attachments/users%2f1/icon.jpeg" width="18" height="18" />
-            <span class="indicator ${window.navigator.onLine ? 'online': 'offline'}"></span>
+            <span class="indicator ${window.navigator.onLine ? 'online' : 'offline'}"></span>
           </div>
           <svg width="9" height="5" viewBox="0 0 15 9" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M1.74658 1.37677L7.74658 7.37677L13.7466 1.37677" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -168,10 +171,10 @@ customElements.define('account-menu', class extends HTMLElement {
           <li><a href="/settings">Show keyboard shortcuts</a></li>
           <li><a href="/settings">Changelog</a></li>
           <li><a href="/settings">Join Slack community</a></li>
-          <li><a href="/settings">Help & Support</a></li>
+          <li><a href="/help">Help & Support</a></li>
           <li><a href="/settings">Log out</a></li>
         </ul>
       </context-menu>
     `;
   }
- });
+});

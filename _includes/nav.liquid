@@ -6,9 +6,9 @@
       </workspace-menu>
       <account-menu></account-menu>
     </header>
-    <h2 style="font-size: var(--scale-1);font-weight: var(--font-weight-medium); color: var(--color-neutral-400)">Your teams</h2>
-    <details open>
-      <summary><span>Localhost</span></summary>
+    <h2 class="smallPlus">Your teams</h2>
+    <details>
+      <summary><span style="font-size: var(--scale-1); font-weight: 400;color: rgb(247, 248, 248);">Localhost</span></summary>
       <ul>
         <li>
           <a href="#" style="display:flex;place-items: center;">
@@ -48,7 +48,10 @@
             </svg> <span style="margin-left: var(--spacing-000);text-overflow: ellipsis;white-space: nowrap;overflow: hidden;">Organizational work and culture</span></a>
       </ul>
     </details>
-    <details>
+    <br />
+    <team-menu>
+    </team-menu>
+    {% comment %} <details>
       <summary><span>THE ELEMENTS</span></summary>
       <ul>
         <li>
@@ -197,5 +200,5 @@
           <a href="#">Get an Element</a>
         </li>
       </ul>
-    </details>
+    </details> {% endcomment %}
   </nav>

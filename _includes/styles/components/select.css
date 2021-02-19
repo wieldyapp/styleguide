@@ -1,0 +1,54 @@
+select {
+  margin: 0px;
+  padding: 6px 24px 6px 12px;
+
+  color: var(--accent-font-color);
+  font-size: 13px;
+
+  background-color: transparent;
+  border: 1px solid var(--color-control-border);
+  border-radius: 4px;
+
+  transition: border 0.15s ease 0s;
+
+  -webkit-appearance: none;
+  appearance: none;
+
+}
+
+select:hover {
+  border-color: var(--color-control-border-hover);
+}
+
+.select {
+  display: grid;
+  grid-template-areas: "select";
+  align-items: center;
+}
+
+select,
+.select:after {
+  grid-area: select;
+}
+
+.select::after {
+  justify-self: end;
+  width: 11px;
+  height: 11px;
+  margin-top: 3px;
+  margin-right: 8px;
+
+  background-color: #8a8f98;
+
+  content: "";
+  clip-path: polygon(
+    25% 26%,
+    15% 35%,
+    30% 50%,
+    50% 70%,
+    70% 50%,
+    85% 35%,
+    75% 25%,
+    50% 50%
+  );
+}

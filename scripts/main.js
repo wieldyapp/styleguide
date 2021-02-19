@@ -8,12 +8,12 @@ import './layouts/index.js';
 
 App.init();
 
-const imageList = document.querySelector('image-list');
-/* Show thumbnail as square or in full aspect ratio */
-document.querySelector("button[aria-controls=images]")?.addEventListener('click', (e) => {
-  imageList.classList.toggle('aspect-ratio');
-});
+// const imageList = document.querySelector('image-list');
+// /* Show thumbnail as square or in full aspect ratio */
+// document.querySelector("button[aria-controls=images]")?.addEventListener('click', (e) => {
+//   imageList.classList.toggle('aspect-ratio');
+// });
 
-document.querySelector('input')?.addEventListener('input', (e) => {
-  imageList.style.setProperty("--column-width", `${e.target.value}vw`);
-});
+// document.querySelector('input')?.addEventListener('input', (e) => {
+//   imageList.style.setProperty("--column-width", `${e.target.value}vw`);
+// });

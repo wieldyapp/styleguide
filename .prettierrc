@@ -1,5 +1,5 @@
 {
   "rules": {
-    "prettier/prettier": [true, { "singleQuote": true, "tabWidth": 4 }]
+    "prettier/prettier": [ true, { "singleQuote": true, "tabWidth": 4 }]
   }
 }

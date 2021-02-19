@@ -1,0 +1,333 @@
+:host {
+  z-index: var(--layer-top);
+
+  color: rgb(98, 102, 109);
+
+  border-radius: var(--radius-2);
+
+  transition: color 150ms, background-color 150ms;
+}
+
+:host(:hover) {
+  color: rgb(215, 216, 219);
+
+  background-color: rgb(45, 47, 54);
+}
+
+[slot="icon"] {
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  width: auto;
+  height: 34px;
+  padding: var(--spacing-000);
+
+  border-radius: var(--radius-2);
+  place-items: center;
+}
+
+::slotted(img) {
+  margin-right: 8px;
+}
+
+::slotted(span) {
+  color: var(--color-neutral-200);
+  font-size: var(--scale-1);
+}
+
+a {
+  display: flex;
+  place-items: center;
+
+  padding: 6px 12px;
+
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-origin: border-box;
+  border-radius: 4px;
+}
+
+li:nth-child(2) a {
+  background-image: url('data:image/svg+xml;utf8, <svg width="8" height="7" viewBox="0 0 8 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.97902 1.68793L3.31236 5.35459L1.64569 3.68793" stroke="rgb(110, 121, 214)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+}
+
+a:any-link {
+  color: var(--color-neutral-300);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--scale-1);
+  text-decoration: none;
+}
+
+ul {
+  margin: 8px 0 0;
+  padding: 0;
+
+  list-style: none;
+  border-radius: var(--radius-2);
+  box-shadow: var(--elevation-2);
+}
+
+li {
+  padding: 0 8px;
+
+  background: rgb(39, 40, 43);
+}
+
+li img {
+  margin-right: 8px;
+}
+
+li:first-child {
+  padding-top: 8px;
+
+  border-top-left-radius: var(--radius-2);
+  border-top-right-radius: var(--radius-2);
+}
+
+li:first-child:hover::after {
+  border-bottom-color: rgb(45, 47, 54);
+}
+
+li:last-child {
+  padding-bottom: 8px;
+
+  border-bottom-right-radius: var(--radius-2);
+  border-bottom-left-radius: var(--radius-2);
+}
+
+ul :nth-last-child(5) {
+  padding-bottom: 4px;
+
+  border-bottom: solid 1px rgb(48, 50, 54);
+}
+
+ul :nth-last-child(5) + li {
+  padding-top: 8px;
+}
+
+ul :nth-last-child(-n + 4) a {
+  color: var(--color-neutral-300);
+  font-size: 12px;
+
+  background: none;
+}
+
+ul :nth-last-child(2) {
+  padding-bottom: 8px;
+
+  border-bottom: solid 1px rgb(48, 50, 54);
+}
+
+ul :nth-last-child(2) + li {
+  padding-top: 8px;
+}
+
+ul a:hover,
+ul a:focus,
+ul a:active {
+  background-color: rgb(45, 47, 54);
+}
+
+context-menu button {
+  display: flex;
+  width: 100%;
+  padding: 0;
+  padding: 6px 12px;
+
+  color: var(--color-neutral-300);
+  font-size: 12px;
+
+  background: transparent;
+  border: 0;
+  border-radius: 4px;
+  place-items: center;
+}
+
+context-menu button:hover,
+context-menu button:focus,
+context-menu button:active {
+  background-color: rgb(45, 47, 54);
+  cursor: pointer;
+}
+
+/*
+  * Dialog
+  * ==============================
+*/
+
+dialog {
+  width: 100vw;
+  height: 100vh;
+
+  padding: 0;
+  overflow: hidden;
+
+  border: none;
+}
+
+dialog label {
+  display: flex;
+  flex-direction: column;
+}
+
+dialog[open] {
+  display: flex;
+  flex-direction: column;
+  gap: 1ch;
+  align-items: center;
+  justify-content: center;
+}
+
+dialog[open],
+::backdrop {
+  background-color: rgb(31, 32, 35);
+}
+
+dialog[open] h1 {
+  text-align: center;
+
+  transition-timing-function: ease-out;
+  animation-name: reveal;
+  animation-duration: 500ms;
+  animation-delay: 0;
+  animation-fill-mode: both;
+}
+
+dialog[open] p {
+  color: var(--color-neutral-400);
+  text-align: center;
+
+  transition-timing-function: ease-out;
+  animation-name: reveal;
+  animation-duration: 500ms;
+  animation-delay: 100ms;
+  animation-fill-mode: both;
+}
+
+dialog[open] form > div {
+  padding: var(--spacing-1);
+
+  background-color: rgb(39, 40, 43);
+
+  border-radius: var(--radius-3);
+  box-shadow: var(--elevation-6);
+
+  transition-timing-function: ease-out;
+  animation-name: reveal;
+  animation-duration: 500ms;
+  animation-delay: 200ms;
+  animation-fill-mode: both;
+}
+
+dialog[open] form #confirmBtn {
+  padding: var(--spacing-00) var(--spacing-5);
+
+  font-weight: var(--font-weight-medium);
+
+  background-color: var(--color-primary-500);
+
+  border: 0;
+
+  border-radius: 4px;
+
+  transition-timing-function: ease-out;
+  animation-name: reveal;
+  animation-duration: 500ms;
+  animation-delay: 300ms;
+  animation-fill-mode: both;
+}
+
+dialog.hide {
+  animation: hide 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+input {
+  padding: var(--spacing-000);
+
+  font-family: var(--font-family-standard);
+
+  background-color: rgb(31, 32, 35);
+  border: solid 1px rgb(60, 63, 68);
+
+  border-radius: 4px;
+}
+
+input:hover {
+  border-color: rgb(69, 72, 78);
+}
+
+input:focus-within {
+  border-color: rgba(255, 255, 254, 0.15);
+  outline: none;
+  box-shadow: 0 0 0 3px hsl(0deg 0% 100% / 5%);
+}
+
+select {
+  margin: 0px;
+  padding: var(--spacing-000);
+
+  color: var(--accent-font-color);
+  font-size: 13px;
+
+  background-color: rgb(31, 32, 35);
+  border: solid 1px rgb(60, 63, 68);
+  border-radius: 4px;
+
+  transition: border 0.15s ease 0s;
+
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.select {
+  display: grid;
+  grid-template-areas: "select";
+  align-items: center;
+}
+
+select,
+.select:after {
+  grid-area: select;
+}
+
+.select::after {
+  justify-self: end;
+  width: 11px;
+  height: 11px;
+  margin-top: 3px;
+  margin-right: 8px;
+
+  background-color: #8a8f98;
+
+  content: "";
+  clip-path: polygon(
+    25% 26%,
+    15% 35%,
+    30% 50%,
+    50% 70%,
+    70% 50%,
+    85% 35%,
+    75% 25%,
+    50% 50%
+  );
+}
+
+@keyframes reveal {
+  0% {
+    transform: translate(0px, -10px);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes hide {
+  from {
+    transform: none;
+  }
+  to {
+    opacity: 0;
+  }
+}

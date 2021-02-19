@@ -1,10 +1,10 @@
-import { dbManager } from './shared/idb/manager.js'
+import { dbManager } from './shared/idb/manager.js';
+
 class App {
   /**
    * @param {object} args
    */
   async init(args) {
-
     dbManager.init();
 
     this.bindEvents();
@@ -19,16 +19,14 @@ class App {
    * Bind events used throughout the app
    */
   bindEvents() {
-    window.addEventListener('DOMContentLoaded', (event) => {
-      document.body.classList.add('loaded');
-    });
+
   }
 
   get preferences() {
     try {
       return JSON.parse(localStorage.getItem('preferences'));
     } catch (error) {
-      return {}
+      return {};
     }
   }
 
@@ -39,7 +37,6 @@ class App {
     localStorage.setItem('preferences', JSON.stringify(obj));
     window.dispatchEvent(new Event('storage')); // Default localstorage event only fires when modified in another document
   }
-
 }
 
 export default new App();

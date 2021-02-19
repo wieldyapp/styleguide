@@ -1,0 +1,20 @@
+.feature {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  padding-bottom: 24px;
+
+  border-bottom: 1px solid rgb(48, 50, 54);
+}
+
+.feature__heading {
+  margin: 0;
+}
+
+.feature__description {
+  margin:0;
+
+  color:var(--color-neutral-300);
+  font-weight: var(--font-weight-regular);
+}

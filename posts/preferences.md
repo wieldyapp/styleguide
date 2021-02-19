@@ -12,50 +12,58 @@ className: settings
     margin: 0 auto;
   }
 
-  .container > p {
-    margin-top: var(--spacing-000);
-
-    padding-bottom: var(--spacing-000);
-
-    color: var(--color-neutral-300);
-
-    border-bottom: solid 1px var(--main-border-color);
-
-  }
-
-  .box {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 24px;
-    padding-bottom: 24px;
-
-    border-bottom: 1px solid rgb(48, 50, 54);
-  }
-
 </style>
 
 <main>
   <div class="container">
-    <h1 class="headline">Preferences</h1>
-    <p>Manage your Wieldy profile</p>
-    <h2 style="font-weight: var(--font-weight-regular);font-size: var(--scale-3)">Feature toggle</h2>
-    <div class="box">
-        <div>
-          <h3 style="font-weight: var(--font-weight-regular);font-size: var(--scale-1)">Interface theme</h3>
-          <p style="color:var(--color-neutral-300);">Select your interface color theme</p>
-        </div>
-        <div>
-          <input type=checkbox />
+    <div class="headline">
+      <h1 class="headline__heading">Preferences</h1>
+      <p class="headline__description">Manage your preferences</p>
+    </div>
+    <h2 class="heading-medium">Display</h2>
+    <div class="feature">
+      <div>
+        <h3 class="feature__heading">Reduce motion and animations</h3>
+        <p class="feature__description">Reduce motion in the user interface by disabling animations.</p>
+      </div>
+      <div>
+        <toggle-switch></toggle-switch>
+      </div>
+    </div>
+    <div class="feature">
+      <div>
+        <h3 class="feature__heading">Display full names</h3>
+        <p class="feature__description">Show full names of users instead of shorter display names.</p>
+      </div>
+      <div>
+        <toggle-switch disabled></toggle-switch>
+      </div>
+    </div>
+    <div class="feature">
+      <div>
+        <h3 class="feature__heading">Use pointer cursors</h3>
+        <p class="feature__description">Change the cursor to a pointer when hovering over any interactive element.</p>
+      </div>
+      <div>
+        <toggle-switch checked></toggle-switch>
+      </div>
+    </div>
+    <h2 class="heading-medium">Theme</h2>
+    <div class="feature">
+      <div>
+        <h3 class="feature__heading">Interface theme</h3>
+        <p class="feature__description">Select your interface color theme</p>
+      </div>
+      <div>
+        <div class="select">
+          <select>
+            <option value="system">System preference</option>
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+            <option value="custom">Custom</option>
+          </select>
         </div>
       </div>
+    </div>
   </div>
 </main>
-
-<script>
-  const container = document.querySelector('.container');
-  const checkbox = container.querySelector('input[type=checkbox]');
-  checkbox.addEventListener('change', (e) => {
-    console.log(e);
-  });
-</script>

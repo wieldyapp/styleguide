@@ -1,3 +1,7 @@
+/*
+  TODO: move this to the same directory as the aside element
+*/
+
 aside .dragbar {
   position: absolute;
   top: 0;
