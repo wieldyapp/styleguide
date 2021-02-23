@@ -14,8 +14,6 @@ nav header {
 
   box-sizing: content-box;
 
-  margin-bottom: var(--spacing-0);
-
   padding: 0;
 
   background-color: var(--color-background);
