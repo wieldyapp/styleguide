@@ -40,14 +40,14 @@ const css = `
   details[open] summary ~ * {
     animation: open 70ms cubic-bezier(.25,.46,.45,.94);
     position: absolute;
-    width: 200px;
+    width: var(--context-menu-width, 200px);
     transform-origin: 100% 0;
     transition-property: transform, opacity;
 
     left: var(--context-menu-left);
     right: var(--context-menu-right);
     z-index: var(--layer-top);
-    position: fixed;
+    position: absolute;
   }
 
   /* Fix for Safari */

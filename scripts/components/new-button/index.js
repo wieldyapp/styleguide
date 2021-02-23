@@ -29,6 +29,7 @@ customElements.define('new-button', class extends HTMLElement {
         :host {
           display:flex;
           height: 28px;
+
         }
 
         :host > a {
@@ -63,6 +64,7 @@ customElements.define('new-button', class extends HTMLElement {
           --context-menu-border-radius: 0 var(--radius-2) var(--radius-2) 0;
           --context-menu-backface-hover: var(--color-primary-400);
           --context-menu-right: 0;
+          --context-menu-width: 156px;
         }
 
         context-menu ul {
