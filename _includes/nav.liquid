@@ -7,7 +7,8 @@
       <account-menu></account-menu>
     </header>
     <div style="flex-grow: 1;overflow-x: hidden;overflow-y: auto;margin-right: var(--gap-offset-0);padding-right: var(--spacing-0);">
-      <h2 class="smallPlus">Your teams</h2>
+      <team-menu></team-menu>
+      {% comment %} <h2 class="smallPlus">Your teams</h2>
       <details>
         <summary><span style="font-size: var(--scale-1); font-weight: 400;color: rgb(247, 248, 248);">Localhost</span></summary>
         <ul>
@@ -48,10 +49,7 @@
                 <path d="M12.188 14.6702C13.2926 14.6702 14.188 13.7747 14.188 12.6702C14.188 11.5656 13.2926 10.6702 12.188 10.6702C11.0834 10.6702 10.188 11.5656 10.188 12.6702C10.188 13.7747 11.0834 14.6702 12.188 14.6702Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
               </svg> <span style="margin-left: var(--spacing-000);text-overflow: ellipsis;white-space: nowrap;overflow: hidden;">Organizational work and culture</span></a>
         </ul>
-      </details>
-      <br />
-      <team-menu>
-      </team-menu>
+      </details> {% endcomment %}
     </div>
     <footer>
       <span style="color: var(--color-neutral-400);font-size: var(--scale-0);font-weight: var(--font-weight-regular);">Support</span>

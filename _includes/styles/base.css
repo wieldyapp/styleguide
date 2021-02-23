@@ -63,6 +63,8 @@ nav {
 
   grid-area: nav;
 
+  box-sizing: border-box;
+
   height: 100vh;
   padding: 0 var(--spacing-0) max(var(--spacing-0), env(safe-area-inset-bottom)) max(var(--spacing-0), env(safe-area-inset-left));
 
