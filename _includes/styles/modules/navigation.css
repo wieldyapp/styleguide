@@ -1,5 +1,7 @@
 nav header {
 
+  position: relative;
+
   display: flex;
 
   flex-shrink: 0;

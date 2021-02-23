@@ -20,7 +20,7 @@
   box-sizing: border-box;
   width: auto;
   height: 34px;
-  padding: var(--spacing-000) 0;
+  padding: var(--spacing-000);
 
   border-radius: var(--radius-2);
   place-items: center;
