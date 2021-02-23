@@ -1,13 +1,13 @@
-import { html, render } from "https://cdn.skypack.dev/lit-html";
-import { dbManager, dbType } from "../../shared/idb/manager.js";
+import { html, render } from 'https://cdn.skypack.dev/lit-html';
+import { dbManager, dbType } from '../../shared/idb/manager.js';
 
 customElements.define(
-  "workspace-menu",
+  'workspace-menu',
   class extends HTMLElement {
     constructor() {
       super();
 
-      this.attachShadow({ mode: "open", delegatesFocus: false });
+      this.attachShadow({ mode: 'open', delegatesFocus: false });
 
       this.render();
       this.bindEvents();
@@ -19,46 +19,42 @@ customElements.define(
 
     bindEvents() {
       const { shadowRoot } = this;
-      const updateButton = shadowRoot.getElementById("updateDetails");
+      const updateButton = shadowRoot.getElementById('updateDetails');
 
-      const favDialog = shadowRoot.getElementById("favDialog");
+      const favDialog = shadowRoot.getElementById('favDialog');
 
-      const selectEl = favDialog.querySelector("select");
-      const inputEl = favDialog.querySelector("input");
-      const confirmBtn = favDialog.querySelector("#confirmBtn");
+      const selectEl = favDialog.querySelector('select');
+      const inputEl = favDialog.querySelector('input');
+      const confirmBtn = favDialog.querySelector('#confirmBtn');
 
       // "Update details" button opens the <dialog> modally
-      updateButton.addEventListener("click", () => {
-        if (typeof favDialog.showModal === "function") {
+      updateButton.addEventListener('click', () => {
+        if (typeof favDialog.showModal === 'function') {
           favDialog.showModal();
         } else {
-          alert("The <dialog> API is not supported by this browser");
+          alert('The <dialog> API is not supported by this browser');
         }
       });
       // "Favorite animal" input sets the value of the submit button
-      selectEl.addEventListener("change", (e) => {
-        confirmBtn.value = [inputEl.value, selectEl.value].join(",");
+      selectEl.addEventListener('change', (e) => {
+        confirmBtn.value = [inputEl.value, selectEl.value].join(',');
       });
       // "Confirm" button of form triggers "close" on dialog because of [method="dialog"]
-      favDialog.addEventListener("close", (event) => {
+      favDialog.addEventListener('close', (event) => {
         event.preventDefault();
 
-        setTimeout(() => {
-          console.log("timeout end");
-        }, 5000);
-
-        favDialog.classList.add("hide");
+        favDialog.classList.add('hide');
 
         favDialog.addEventListener(
-          "animationend",
+          'animationend',
           function closeDialog() {
-            favDialog.classList.remove("hide");
+            favDialog.classList.remove('hide');
             favDialog.close();
-            favDialog.removeAttribute("open");
+            favDialog.removeAttribute('open');
             favDialog.focus();
-            favDialog.removeEventListener("animationend", closeDialog, false);
+            favDialog.removeEventListener('animationend', closeDialog, false);
           },
-          false
+          false,
         );
 
         // console.log(favDialog.returnValue.split(','));
@@ -66,19 +62,19 @@ customElements.define(
         // await dbManager.open(dbType.WORKSPACE, returnValue[0].toLowerCase());
       });
 
-      favDialog.addEventListener("cancel", (event) => {
+      favDialog.addEventListener('cancel', (event) => {
         event.preventDefault();
 
-        favDialog.classList.add("hide");
+        favDialog.classList.add('hide');
 
         favDialog.addEventListener(
-          "animationend",
+          'animationend',
           function closeDialog() {
-            favDialog.classList.remove("hide");
+            favDialog.classList.remove('hide');
             favDialog.close();
-            favDialog.removeAttribute("open");
+            favDialog.removeAttribute('open');
             favDialog.focus();
-            favDialog.removeEventListener("animationend", closeDialog, false);
+            favDialog.removeEventListener('animationend', closeDialog, false);
           },
           false
         );
@@ -98,25 +94,25 @@ customElements.define(
 
       return [
         {
-          domain: "wieldy.app",
-          name: "Wieldy",
-          id: "23",
+          domain: 'wieldy.app',
+          name: 'Wieldy',
+          id: '23',
           icon:
-            "https://uploads.linear.app/6b398a37-b7c2-4de1-922a-15b40a22f010/e6b87a60-768b-4d02-be70-28f9bd256371/256x256/256.png",
+            'https://uploads.linear.app/6b398a37-b7c2-4de1-922a-15b40a22f010/e6b87a60-768b-4d02-be70-28f9bd256371/256x256/256.png',
         },
         {
-          domain: "wieldy.app",
-          name: "Encom",
-          id: "23",
+          domain: 'wieldy.app',
+          name: 'Encom',
+          id: '23',
           icon:
-            "https://uploads.linear.app/6b398a37-b7c2-4de1-922a-15b40a22f010/e6b87a60-768b-4d02-be70-28f9bd256371/256x256/256.png",
+            'https://uploads.linear.app/6b398a37-b7c2-4de1-922a-15b40a22f010/e6b87a60-768b-4d02-be70-28f9bd256371/256x256/256.png',
         },
         {
-          domain: "wieldy.app",
-          name: "Nimble Initiatives",
-          id: "23",
+          domain: 'wieldy.app',
+          name: 'Nimble Initiatives',
+          id: '23',
           icon:
-            "https://uploads.linear.app/6b398a37-b7c2-4de1-922a-15b40a22f010/e6b87a60-768b-4d02-be70-28f9bd256371/256x256/256.png",
+            'https://uploads.linear.app/6b398a37-b7c2-4de1-922a-15b40a22f010/e6b87a60-768b-4d02-be70-28f9bd256371/256x256/256.png',
         },
       ];
     }
@@ -216,7 +212,7 @@ customElements.define(
     }
 
     save(e) {
-      console.log("switch");
+      console.log('switch');
     }
   }
 );

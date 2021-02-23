@@ -44,7 +44,7 @@
     --color-control: var(--color-neutral-500);
     --color-control-border: #303236;
     --color-control-border-hover: rgb(69, 72, 78);
-    --color-control-backface-hover: var(--color-neutral-300);
+    --color-control-backface-hover: rgb(69, 72, 78);
 
     /* --- */;
     --main-border-color: #303236;

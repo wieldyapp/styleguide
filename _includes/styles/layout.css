@@ -8,6 +8,7 @@
    * Applied to sizing property
    * Eg: margin, padding, height
    */
+  --spacing-0000: 6px;
   --spacing-000: 8px;
   --spacing-00: 12px;
   --spacing-0: 16px;

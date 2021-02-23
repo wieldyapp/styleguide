@@ -58,13 +58,13 @@ header {
 nav {
   position: relative;
 
+  display: flex;
+  flex-direction: column;
+
   grid-area: nav;
 
   height: 100vh;
   padding: 0 var(--spacing-0) max(var(--spacing-0), env(safe-area-inset-bottom)) max(var(--spacing-0), env(safe-area-inset-left));
-
-  overflow-x: hidden;
-  overflow-y: auto;
 
   background-color: var(--color-background);
 
@@ -191,7 +191,7 @@ toggle-switch:not([disabled]) {
 }
 
 toggle-switch:not([disabled]):not([checked]):hover {
-  background-color: var(--color-control-backface-hover);
+  /* background-color: var(--color-control-backface-hover); */
   /* box-shadow: 0 0 0 1px var(--color-control-backface-hover); */
 }
 
@@ -206,7 +206,7 @@ toggle-switch[checked] {
 }
 
 toggle-switch[checked]:hover {
-  background-color: var(--color-primary-400);
+  /* background-color: var(--color-primary-400); */
   /* box-shadow: 0 0 0 1px var(--color-primary-400); */
 }
 

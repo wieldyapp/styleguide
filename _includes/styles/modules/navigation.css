@@ -1,10 +1,8 @@
 nav header {
-  position: sticky;
-  top: 0;
-
-  z-index: var(--layer-1);
 
   display: flex;
+
+  flex-shrink: 0;
 
   grid-area: auto;
 

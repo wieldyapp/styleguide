@@ -2,7 +2,7 @@
 title: This is my second post
 date: 2020-02-01
 layout: base.liquid
-className: settings
+
 ---
 
 <style>
@@ -63,6 +63,32 @@ className: settings
             <option value="custom">Custom</option>
           </select>
         </div>
+      </div>
+    </div>
+    <h2 class="heading-medium">Behavior</h2>
+    <div class="feature">
+      <div>
+        <h3 class="feature__heading">Default home view</h3>
+        <p class="feature__description">Which view is opened when you open up Linear.</p>
+      </div>
+      <div>
+        <div class="select">
+          <select>
+            <option value="activeIssues">Active issues</option>
+            <option value="activeCycle">Active cycle</option>
+            <option value="inbox">Inbox</option>
+            <option value="myIssues">My issues</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="feature">
+      <div>
+        <h3 class="feature__heading">Developer preview</h3>
+        <p class="feature__description">Enable experimental features.</p>
+      </div>
+      <div>
+        <toggle-switch checked></toggle-switch>
       </div>
     </div>
   </div>
